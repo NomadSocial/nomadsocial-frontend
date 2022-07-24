@@ -21,6 +21,15 @@ const Header = ({ userToken, handleToken }) => {
                 <Link to="/signup">
                   <button>S'inscrire</button>
                 </Link>
+                <select name="pets" id="pet-select">
+                  <option value="">S'inscrire</option>
+                  <option value="dog">Dog</option>
+                  <option value="cat">Cat</option>
+                  <option value="hamster">Hamster</option>
+                  <option value="parrot">Parrot</option>
+                  <option value="spider">Spider</option>
+                  <option value="goldfish">Goldfish</option>
+                </select>
                 <br />
                 <span className="space">{"|"}</span>
                 <Link to="/login">

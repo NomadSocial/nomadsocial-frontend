@@ -1,9 +1,9 @@
 header {
-  border: red solid 2px;
-  width: 1000px;
+  width: 90%;
   margin: 10px auto;
   background-color: white;
   display: flex;
+
   .left-header {
     display: flex;
     align-items: center;
@@ -18,7 +18,6 @@ header {
   }
   .right-header {
     display: flex;
-    border: blue solid 2px;
     flex: auto;
     align-items: center;
     justify-content: flex-end;
@@ -26,6 +25,8 @@ header {
     .contact {
       padding: 15px;
       display: flex;
+      border: green solid 2px;
+      justify-content: space-between;
     }
   }
 }
