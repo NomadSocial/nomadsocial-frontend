@@ -1,12 +1,18 @@
 import "./app.scss";
 
 import { useState } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 
 // components
 import Header from "./components/Header";
 // pages
+
+import SignUpLiberal from "./pages/SignUpLiberal";
+import SignUpCompany from "./pages/SignUpCompany";
+import LogInLiberal from "./pages/LogInLiberal";
+import LogInCompany from "./pages/LogInCompany";
+import Home from "./pages/Home";
 
 // Import des icones
 
@@ -26,6 +32,26 @@ function App() {
   return (
     <Router>
       <Header handleToken={handleToken} userToken={userToken} />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/signupliberal"
+          element={<SignUpLiberal handleToken={handleToken} />}
+        />
+        <Route
+          path="/signupcompany"
+          element={<SignUpCompany handleToken={handleToken} />}
+        />
+        <Route
+          path="/loginliberal"
+          element={<LogInLiberal handleToken={handleToken} />}
+        />
+        <Route
+          path="/logincompany"
+          element={<LogInCompany handleToken={handleToken} />}
+        />
+      </Routes>
     </Router>
   );
 }

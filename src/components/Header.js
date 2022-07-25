@@ -1,40 +1,63 @@
 import "./Header.scss";
+import Dropdown from "react-bootstrap/Dropdown";
 
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import logo from "../assets/img/Logo.png";
 
 const Header = ({ userToken, handleToken }) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
       <header>
         <div className="left-header">
           <div className="logo">
-            <img src={logo} alt="" />
+            <img src={logo} onClick={() => navigate("/")} alt="" />
           </div>
         </div>
         <div className="right-header">
           <div className="contact">
             {!userToken ? (
               <>
-                <Link to="/signup">
-                  <button>S'inscrire</button>
-                </Link>
-                <select name="pets" id="pet-select">
-                  <option value="">S'inscrire</option>
-                  <option value="dog">Dog</option>
-                  <option value="cat">Cat</option>
-                  <option value="hamster">Hamster</option>
-                  <option value="parrot">Parrot</option>
-                  <option value="spider">Spider</option>
-                  <option value="goldfish">Goldfish</option>
-                </select>
+                <Dropdown>
+                  <Dropdown.Toggle
+                    className="dropdown"
+                    danger="info"
+                    id="dropdown-basic"
+                  >
+                    S'inscrire
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item value="indépendant">
+                      <Link to="/signupliberal">Je suis un Indépendant </Link>
+                    </Dropdown.Item>
+
+                    <Dropdown.Item value="company">
+                      <Link to="/signupcompany">Je suis une entreprise</Link>
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+                <div className="space"></div>
+                <Dropdown>
+                  <Dropdown.Toggle
+                    className="dropdown"
+                    danger="info"
+                    id="dropdown-basic"
+                  >
+                    Se connecter
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item value="indépendant">
+                      <Link to="/loginliberal">Je suis un Indépendant</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item value="company">
+                      <Link to="/logincompany">Je suis une entreprise</Link>
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+
                 <br />
-                <span className="space">{"|"}</span>
-                <Link to="/login">
-                  <button>Connexion</button>
-                </Link>
               </>
             ) : (
               <button

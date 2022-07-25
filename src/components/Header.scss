@@ -27,6 +27,9 @@ header {
       display: flex;
       border: green solid 2px;
       justify-content: space-between;
+      .space {
+        width: 20px;
+      }
     }
   }
 }
