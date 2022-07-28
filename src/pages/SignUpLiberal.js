@@ -69,12 +69,7 @@ const SignUpLiberal = ({ handleToken }) => {
           value={password}
           onChange={handlePasswordChange}
         />
-        <input
-          type="checkbox"
-          checked={newsletter}
-          onChange={handleNewsletterChange}
-        />
-        <span>S'inscrire à la newsletter</span>
+
         <input className="sign" type="submit" value="S'inscrire" />
       </form>
     </div>

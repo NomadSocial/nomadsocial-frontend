@@ -13,6 +13,8 @@ import SignUpCompany from "./pages/SignUpCompany";
 import LogInLiberal from "./pages/LogInLiberal";
 import LogInCompany from "./pages/LogInCompany";
 import Home from "./pages/Home";
+import Company from "./pages/Company";
+import Independant from "./pages/Independant";
 
 // Import des icones
 
@@ -50,6 +52,14 @@ function App() {
         <Route
           path="/logincompany"
           element={<LogInCompany handleToken={handleToken} />}
+        />
+        <Route
+          path="/company"
+          element={<Company handleToken={handleToken} />}
+        />
+        <Route
+          path="/independant"
+          element={<Independant handleToken={handleToken} />}
         />
       </Routes>
     </Router>

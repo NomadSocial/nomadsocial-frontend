@@ -9,10 +9,12 @@ const LogInLiberal = ({ handleToken }) => {
   const handleEmailChange = (event) => {
     const value = event.target.value;
     setEmail(value);
+    console.log(value);
   };
   const handlePasswordChange = (event) => {
     const value = event.target.value;
     setPassword(value);
+    console.log(value);
   };
 
   const handleSubmit = async (event) => {

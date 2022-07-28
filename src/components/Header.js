@@ -16,10 +16,25 @@ const Header = ({ userToken, handleToken }) => {
             <img src={logo} onClick={() => navigate("/")} alt="" />
           </div>
         </div>
+        <div>
+          <span className="menu-renfort">SOS Renfort</span>
+        </div>
         <div className="right-header">
           <div className="contact">
             {!userToken ? (
               <>
+                <div>
+                  <span onClick={() => navigate("/company")}>Entreprise</span>
+                </div>
+                <div>
+                  <span onClick={() => navigate("/independant")}>
+                    Indépendant
+                  </span>
+                </div>
+                <div>
+                  <span>Nomad Social</span>
+                </div>
+
                 <Dropdown>
                   <Dropdown.Toggle
                     className="dropdown"
@@ -38,7 +53,7 @@ const Header = ({ userToken, handleToken }) => {
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
-                <div className="space"></div>
+
                 <Dropdown>
                   <Dropdown.Toggle
                     className="dropdown"

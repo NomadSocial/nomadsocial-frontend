@@ -10,16 +10,19 @@ const SignUpCompany = ({ handleToken }) => {
   const handleEmailChange = (event) => {
     const value = event.target.value;
     setEmail(value);
+    console.log(value);
   };
 
   const handleUserChange = (event) => {
     const value = event.target.value;
     setUsername(value);
+    console.log(value);
   };
 
   const handlePasswordChange = (event) => {
     const value = event.target.value;
     setPassword(value);
+    console.log(value);
   };
   const handleNewsletterChange = () => {
     setNewsletter(!newsletter);
@@ -69,13 +72,6 @@ const SignUpCompany = ({ handleToken }) => {
           value={password}
           onChange={handlePasswordChange}
         />
-        <input
-          type="checkbox"
-          checked={newsletter}
-          onChange={handleNewsletterChange}
-        />
-        <span>S'inscrire à la newsletter pro</span>
-        <input className="sign" type="submit" value="S'inscrire" />
       </form>
     </div>
   );
