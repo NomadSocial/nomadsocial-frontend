@@ -25,20 +25,26 @@ const Home = () => {
             <img src={imghome} alt="" />
           </div>
         </div>
-        <div className="encart">
-          <div className="left-encart">
-            <h2 className="bleu">Entreprise</h2>
-            <p>Trouvez rapidement l'aide dont vous avez besoin</p>
-            <button onClick={() => navigate("/company")}>
-              Je cherche de l'aide
-            </button>
-          </div>
-          <div className="right-encart">
-            <h2 className="bleu">Independant</h2>
-            <p>Une nouvelle liberté de travailler, mieux rémunéré</p>
-            <button onClick={() => navigate("/independant")}>
-              Je cherche une mission
-            </button>
+        <div className="container">
+          <div className="test">
+            {" "}
+            <div className="encart">
+              <div className="left-encart">
+                <h2 className="bleu">Entreprise</h2>
+                <p>Trouvez rapidement l'aide dont vous avez besoin</p>
+                <button onClick={() => navigate("/company")}>
+                  Je cherche de l'aide
+                </button>
+              </div>
+
+              <div className="right-encart">
+                <h2 className="bleu">Independant</h2>
+                <p>Une nouvelle liberté de travailler, mieux rémunéré</p>
+                <button onClick={() => navigate("/independant")}>
+                  Je cherche une mission
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
