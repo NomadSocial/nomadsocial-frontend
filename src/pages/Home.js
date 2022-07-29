@@ -27,7 +27,6 @@ const Home = () => {
         </div>
         <div className="container">
           <div className="test">
-            {" "}
             <div className="encart">
               <div className="left-encart">
                 <h2 className="bleu">Entreprise</h2>

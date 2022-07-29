@@ -25,16 +25,89 @@ header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      span:hover {
-        color: #38b6ff;
-      }
     }
   }
-  .menu-renfort {
-    color: #38b6ff;
+  .button {
+    display: flex;
+    width: 35%;
+    align-items: center;
+    justify-content: space-between;
+    button {
+      background-color: #38b6ff;
+      border: none;
+    }
+    button:hover {
+      background-color: #38b6ff;
+      border: none;
+    }
   }
-  .menu-renfort:hover {
-    color: white;
-    background-color: #38b6ff;
-  }
+}
+
+//EFFET TRANSITION DE LA BARRE DE MENU
+
+.nav-menu {
+  background-color: white;
+  border: none;
+  color: #5b5b5b;
+  outline: none;
+  position: relative;
+}
+.nav-menu:before,
+.nav-menu:after {
+  border: 0 solid transparent;
+  transition: all 0.25s;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.nav-menu:before {
+  border-top: 2px solid #38b6ff;
+  left: 0px;
+  top: -5px;
+}
+.nav-menu:after {
+  border-bottom: 2px solid #38b6ff;
+  bottom: -5px;
+  right: 0px;
+}
+.nav-menu:hover:before,
+.nav-menu:hover:after {
+  height: 100%;
+  width: 100%;
+}
+
+// EFFET TRANSITION SOS RENFORT
+
+.nav-menu-renfort {
+  background-color: white;
+  border: none;
+  color: #38b6ff;
+  outline: none;
+  position: relative;
+}
+.nav-menu-renfort:before,
+.nav-menu-renfort:after {
+  border: 0 solid transparent;
+  transition: all 0.25s;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.nav-menu-renfort:before {
+  border-top: 2px solid #5b5b5b;
+  left: 0px;
+  top: -5px;
+}
+.nav-menu-renfort:after {
+  border-bottom: 2px solid #5b5b5b;
+  bottom: -5px;
+  right: 0px;
+}
+.nav-menu-renfort:hover:before,
+.nav-menu-renfort:hover:after {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
 }

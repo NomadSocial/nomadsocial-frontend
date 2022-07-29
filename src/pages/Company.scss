@@ -1,0 +1,35 @@
+.main {
+  color: #5b5b5b;
+  font-family: "Alatsi", sans-serif;
+  h1 {
+    color: #38b6ff;
+    margin-left: 40px;
+    font-size: 24px;
+  }
+  .top-main {
+    border: red solid 2px;
+    height: 100%;
+    .list-one {
+      border: blue solid 2px;
+      display: flex;
+      justify-content: space-around;
+
+      width: 100%;
+    }
+    .list-three {
+      text-align: center;
+      width: 100%;
+    }
+    .list-two {
+      border: blue solid 2px;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
+  .bottom-main {
+    p {
+      margin-left: 40px;
+    }
+  }
+}

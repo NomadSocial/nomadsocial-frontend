@@ -17,61 +17,69 @@ const Header = ({ userToken, handleToken }) => {
           </div>
         </div>
         <div>
-          <span className="menu-renfort">SOS Renfort</span>
+          <span className="nav-menu-renfort">SOS Renfort</span>
         </div>
         <div className="right-header">
           <div className="contact">
             {!userToken ? (
               <>
                 <div>
-                  <span onClick={() => navigate("/company")}>Entreprise</span>
+                  <button
+                    className="nav-menu"
+                    onClick={() => navigate("/company")}
+                  >
+                    Entreprise
+                  </button>
                 </div>
                 <div>
-                  <span onClick={() => navigate("/independant")}>
+                  <button
+                    className="nav-menu"
+                    onClick={() => navigate("/independant")}
+                  >
                     Indépendant
-                  </span>
+                  </button>
                 </div>
                 <div>
-                  <span>Nomad Social</span>
+                  <span className="nav-menu">Nomad Social</span>
                 </div>
+                <div className="button">
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      className="dropdown"
+                      danger="info"
+                      id="dropdown-basic"
+                    >
+                      S'inscrire
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item value="indépendant">
+                        <Link to="/signupliberal">Je suis un Indépendant </Link>
+                      </Dropdown.Item>
 
-                <Dropdown>
-                  <Dropdown.Toggle
-                    className="dropdown"
-                    danger="info"
-                    id="dropdown-basic"
-                  >
-                    S'inscrire
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <Dropdown.Item value="indépendant">
-                      <Link to="/signupliberal">Je suis un Indépendant </Link>
-                    </Dropdown.Item>
+                      <Dropdown.Item value="company">
+                        <Link to="/signupcompany">Je suis une entreprise</Link>
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
 
-                    <Dropdown.Item value="company">
-                      <Link to="/signupcompany">Je suis une entreprise</Link>
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-
-                <Dropdown>
-                  <Dropdown.Toggle
-                    className="dropdown"
-                    danger="info"
-                    id="dropdown-basic"
-                  >
-                    Se connecter
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <Dropdown.Item value="indépendant">
-                      <Link to="/loginliberal">Je suis un Indépendant</Link>
-                    </Dropdown.Item>
-                    <Dropdown.Item value="company">
-                      <Link to="/logincompany">Je suis une entreprise</Link>
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      className="dropdown"
+                      danger="info"
+                      id="dropdown-basic"
+                    >
+                      Se connecter
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item value="indépendant">
+                        <Link to="/loginliberal">Je suis un Indépendant</Link>
+                      </Dropdown.Item>
+                      <Dropdown.Item value="company">
+                        <Link to="/logincompany">Je suis une entreprise</Link>
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
                 <br />
               </>
             ) : (
