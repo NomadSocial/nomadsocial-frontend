@@ -1,3 +1,5 @@
+import "./LogInLiberal.scss";
+
 import { useState } from "react";
 // import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +13,7 @@ const LogInLiberal = ({ handleToken }) => {
     setEmail(value);
     console.log(value);
   };
+
   const handlePasswordChange = (event) => {
     const value = event.target.value;
     setPassword(value);
@@ -34,22 +37,28 @@ const LogInLiberal = ({ handleToken }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="signup-container">
+    <div className="login-container">
+      <form onSubmit={handleSubmit}>
         <h1>Se connecter</h1>
-        <input
-          type="email"
-          placeholder="email"
-          value={email}
-          onChange={handleEmailChange}
-        />
-        <input
-          type="password"
-          placeholder="mot de passe"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-        <input className="sign" type="submit" value="Connexion" />
+        <div className="login">
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={handleEmailChange}
+          />
+        </div>
+        <div className="login">
+          <input
+            type="password"
+            placeholder="Mot de passe"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </div>
+        <div className="login-button">
+          <input type="submit" value="Connexion" />
+        </div>
       </form>
     </div>
   );

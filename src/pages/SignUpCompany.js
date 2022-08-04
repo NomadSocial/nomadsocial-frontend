@@ -75,22 +75,23 @@ const SignUpCompany = ({ handleToken }) => {
     <div className="signup-container">
       <form onSubmit={handleSubmit}>
         <h1>S'inscrire</h1>
-
-        <div className="user">
-          <input
-            type="text"
-            placeholder="Prénom*"
-            value={userName}
-            onChange={handleUserChange}
-          />
-        </div>
-        <div className="user">
-          <input
-            type="text"
-            placeholder="Nom*"
-            value={userLastName}
-            onChange={handleUserLastNameChange}
-          />
+        <div className="both">
+          <div className="User">
+            <input
+              type="text"
+              placeholder="Prénom*"
+              value={userName}
+              onChange={handleUserChange}
+            />
+          </div>
+          <div className="User">
+            <input
+              type="text"
+              placeholder="Nom*"
+              value={userLastName}
+              onChange={handleUserLastNameChange}
+            />
+          </div>
         </div>
         <div className="contact">
           <input

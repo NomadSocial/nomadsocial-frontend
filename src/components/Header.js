@@ -57,7 +57,7 @@ const Header = ({ userToken, handleToken }) => {
                       </Dropdown.Item>
 
                       <Dropdown.Item value="company">
-                        <Link to="/signupcompany">Je suis une entreprise</Link>
+                        <Link to="/signupcompany">Je suis une Entreprise</Link>
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
@@ -75,7 +75,7 @@ const Header = ({ userToken, handleToken }) => {
                         <Link to="/loginliberal">Je suis un Indépendant</Link>
                       </Dropdown.Item>
                       <Dropdown.Item value="company">
-                        <Link to="/logincompany">Je suis une entreprise</Link>
+                        <Link to="/logincompany">Je suis une Entreprise</Link>
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>

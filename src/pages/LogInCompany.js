@@ -1,3 +1,4 @@
+import "./LogInCompany.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import axios from "axios";
@@ -5,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 const LogInCompany = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleEmailChange = (event) => {
     const value = event.target.value;
@@ -18,37 +21,51 @@ const LogInCompany = ({ handleToken }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
-  //     try {
-  //       const response = await axios.post("http://localhost:3100/loginliberal", {
+  // const login = async () => {
+  //   setIsLoading(true);
+  //   setErrorMessage("");
+  //   try {
+  //     if (email && password) {
+  //       // const url_server = "http://localhost:3000/user/login";
+  //       const url_server = "https://jdr-app.herokuapp.com/user/login";
+
+  //       const response = await axios.post(url_server, {
   //         email: email,
   //         password: password,
   //       });
-  //       console.log(response.data);
-  //       console.log(response.data.token);
-  //       handleToken(response.data.token);
-  //       navigate("/");
-  //     } catch (error) {
-  //       console.log(error.response);
+  //       setUser(response.data.token);
+  //     } else {
+  //       setErrorMessage("Un des champs est vide");
   //     }
-  //   };
+  //   } catch (error) {
+  //     setErrorMessage(error.message);
+  //   }
+  //   setIsLoading(false);
+  // };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="signup-container">
+    <div className="login-container">
+      <form onSubmit={handleSubmit}>
         <h1>Se connecter</h1>
-        <input
-          type="email"
-          placeholder="email"
-          value={email}
-          onChange={handleEmailChange}
-        />
-        <input
-          type="password"
-          placeholder="mot de passe"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-        <input className="sign" type="submit" value="Connexion" />
+        <div className="login">
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={handleEmailChange}
+          />
+        </div>
+        <div className="login">
+          <input
+            type="password"
+            placeholder="Mot de passe"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </div>
+        <div className="login-button">
+          <input type="submit" value="Connexion" />
+        </div>
       </form>
     </div>
   );
