@@ -15,6 +15,8 @@ import LogInCompany from "./pages/LogInCompany";
 import Home from "./pages/Home";
 import Company from "./pages/Company";
 import Independant from "./pages/Independant";
+import Publish from "./pages/Publish";
+import Offers from "./pages/Offers";
 
 // Import des icones
 
@@ -61,6 +63,8 @@ function App() {
           path="/independant"
           element={<Independant handleToken={handleToken} />}
         />
+        <Route path="/publier" element={<Publish />} />
+        <Route path="/offres" element={<Offers handleToken={handleToken} />} />
       </Routes>
     </Router>
   );

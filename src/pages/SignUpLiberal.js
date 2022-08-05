@@ -1,7 +1,8 @@
 import "./SignUpLiberal.scss";
 
 import { useState } from "react";
-// import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SignUpLiberal = ({ handleToken }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -11,6 +12,7 @@ const SignUpLiberal = ({ handleToken }) => {
   const [userLastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
     const value = event.target.value;
@@ -37,35 +39,33 @@ const SignUpLiberal = ({ handleToken }) => {
     setConfirmPassword(value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    setErrorMessage("");
+    setIsLoading(true);
+    try {
+      if (password === confirmPassword) {
+        const url_server = "http://127.0.0.1:8000/api/usercreate";
+
+        const response = await axios.post(url_server, {
+          email: email,
+          firstname: userName,
+          name: userLastName,
+          password: password,
+        });
+
+        console.log(response.data);
+        handleToken(response.data.token);
+        navigate("/");
+      } else {
+        setErrorMessage("Les mots de passes ne sont pas identiques");
+      }
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
+    setIsLoading(false);
   };
-
-  // const signUp = async () => {
-  //   setErrorMessage("");
-  //   setIsLoading(true);
-  //   try {
-  //     if (password === confirmPassword) {
-
-  //       const url_server = "https://jdr-app.herokuapp.com/user/signup";
-
-  //       const response = await axios.post(url_server, {
-  //         email: email,
-  //         username: username,
-  //         password: password,
-  //       });
-
-  //       console.log(response.data);
-  //       //       handleToken(response.data.token);
-  //       //       navigate("/");
-  //     } else {
-  //       setErrorMessage("Les mots de passes ne sont pas identiques");
-  //     }
-  //   } catch (error) {
-  //     setErrorMessage(error.message);
-  //   }
-  //   setIsLoading(false);
-  // };
 
   return (
     <div className="signup-container">

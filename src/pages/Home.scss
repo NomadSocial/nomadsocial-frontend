@@ -2,6 +2,7 @@
   display: flex;
   color: #5b5b5b;
   font-family: "Alatsi", sans-serif;
+  border-bottom: solid grey 1px;
 
   .right-home {
     img {
@@ -83,5 +84,22 @@
         }
       }
     }
+  }
+}
+
+.tarif {
+  font-family: "Alatsi", sans-serif;
+  padding: 30px;
+  font-size: 20px;
+  h1 {
+    font-size: 24px;
+    color: #38b6ff;
+  }
+  img {
+    margin-bottom: 30px;
+  }
+  .italic {
+    font-style: italic;
+    font-size: 16px;
   }
 }
