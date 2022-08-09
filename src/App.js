@@ -6,6 +6,7 @@ import Cookies from "js-cookie";
 
 // components
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 // pages
 
 import SignUpLiberal from "./pages/SignUpLiberal";
@@ -66,6 +67,7 @@ function App() {
         <Route path="/publier" element={<Publish />} />
         <Route path="/offres" element={<Offers handleToken={handleToken} />} />
       </Routes>
+      <Footer handleToken={handleToken} userToken={userToken} />
     </Router>
   );
 }

@@ -46,12 +46,12 @@ const SignUpLiberal = ({ handleToken }) => {
     setIsLoading(true);
     try {
       if (password === confirmPassword) {
-        const url_server = "http://127.0.0.1:8000/api/usercreate";
+        const url_server = "http://localhost:8000/api/api/company/users"; // ?
 
         const response = await axios.post(url_server, {
           email: email,
-          firstname: userName,
-          name: userLastName,
+          first_name: userName,
+          last_name: userLastName,
           password: password,
         });
 

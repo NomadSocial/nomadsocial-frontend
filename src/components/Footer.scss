@@ -1,0 +1,58 @@
+.footer {
+  display: flex;
+  align-items: center;
+  //   background-color: #ffde59;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  font-family: "Alatsi", sans-serif;
+  font-size: 14px;
+  justify-content: space-around;
+  padding: 20px;
+
+  .left-footer {
+    img {
+      object-fit: cover;
+      width: 160px;
+    }
+    img:hover {
+      cursor: pointer;
+    }
+  }
+  h3 {
+    color: #38b6ff;
+    font-size: 16px;
+  }
+
+  .socialnetwork {
+    height: 100px;
+    .logo-rs {
+      display: flex;
+      justify-content: space-between;
+      img {
+        object-fit: cover;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  .nomadsocial {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+  }
+  .discover {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+  }
+  .ressource {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+  }
+  span:hover {
+    cursor: pointer;
+  }
+}
