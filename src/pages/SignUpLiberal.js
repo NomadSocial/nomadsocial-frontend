@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SignUpLiberal = ({ handleToken }) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
   const [email, setEmail] = useState("");
   const [userName, setName] = useState("");
   const [userLastName, setLastName] = useState("");
@@ -42,29 +40,20 @@ const SignUpLiberal = ({ handleToken }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    setErrorMessage("");
-    setIsLoading(true);
-    try {
-      if (password === confirmPassword) {
-        const url_server = "http://localhost:8000/api/api/company/users"; // ?
-
-        const response = await axios.post(url_server, {
+    if (password === confirmPassword) {
+      const url_server = "http://localhost:8000/api/entrepreneurs/register/";
+      axios
+        .post(url_server, {
           email: email,
           first_name: userName,
           last_name: userLastName,
           password: password,
-        });
-
-        console.log(response.data);
-        handleToken(response.data.token);
-        navigate("/");
-      } else {
-        setErrorMessage("Les mots de passes ne sont pas identiques");
-      }
-    } catch (error) {
-      setErrorMessage(error.message);
+        })
+        .then((response) => navigate("/"))
+        .catch((error) => console.log(error));
+    } else {
+      alert("Mot de passe non identique");
     }
-    setIsLoading(false);
   };
 
   return (

@@ -1,12 +1,14 @@
 import "./LogInLiberal.scss";
 
 import { useState } from "react";
-// import axios from "axios";
-import { useNavigate } from "react-router-dom";
+
+import { Navigate, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const LogInLiberal = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
     const value = event.target.value;
@@ -22,18 +24,21 @@ const LogInLiberal = ({ handleToken }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // try {
-    //   const response = await axios.post("http://localhost:3100/loginliberal", {
-    //     email: email,
-    //     password: password,
-    //   });
-    //   console.log(response.data);
-    //   console.log(response.data.token);
-    //   handleToken(response.data.token);
-    //   navigate("/");
-    // } catch (error) {
-    //   console.log(error.response);
-    // }
+    axios
+      .get("http://localhost:8000/api/me/", {
+        auth: {
+          username: email,
+          password: password,
+        },
+      })
+      .then((response) => {
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
+        navigate("/");
+      })
+      .catch((error) => {
+        alert(error.response.data["detail"]);
+      });
   };
 
   return (

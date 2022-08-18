@@ -1,6 +1,6 @@
 import "./Company.scss";
 
-const Company = ({ handleToken }) => {
+const Company = () => {
   return (
     <>
       <div className="main">

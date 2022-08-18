@@ -1,0 +1,31 @@
+.main-home-liberal {
+  border: blue solid 2px;
+  font-family: "Alatsi", sans-serif;
+  h1 {
+    color: #38b6ff;
+    font-size: 24px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .title-home-liberal {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    img {
+      width: 40px;
+      height: 40px;
+      margin-left: 60px;
+    }
+  }
+  .checklist-home-liberal {
+    .checklist {
+      display: flex;
+      flex-direction: column;
+    }
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
