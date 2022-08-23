@@ -4,6 +4,7 @@ import axios from "axios";
 import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import fr from 'date-fns/locale/fr';
+import Swal from 'sweetalert2'
 registerLocale('fr', fr);
 
 const Profil = () => {
@@ -159,7 +160,13 @@ const Profil = () => {
         }
       )
       .then((response) => {
-        alert("Profil modifié");
+        Swal.fire({
+          title: 'Succès!',
+          text: 'Profil modifié',
+          icon: 'success',
+          confirmButtonText: 'Ok',
+          confirmButtonColor: '#ffde59'
+        })
       })
       .catch((error) => {
         console.log(error.response.data);
@@ -199,6 +206,7 @@ const Profil = () => {
     }
   }
   const handleSubmit3 = (event) => {
+    event.preventDefault();
     var L = []
     var R = []
     for (let i in choix) {
@@ -241,8 +249,13 @@ const Profil = () => {
         }
       )
       .then((response) => {
-        console.log(response)
-        alert("Données validé");
+        Swal.fire({
+          title: 'Succès!',
+          text: 'Données validées',
+          icon: 'success',
+          confirmButtonText: 'Ok',
+          confirmButtonColor: '#ffde59'
+        })
       })
       .catch((error) => {
         console.log(error.response.data);
@@ -251,24 +264,37 @@ const Profil = () => {
 
   }
   const handleClick = (event) => {
-    event.preventDefault();
-    axios.post("http://localhost:8000/api/me/worklocations/",
-      {
-        zipcode: parseInt(zipcode)
-      },
-      {
-        auth: {
-          username: localStorage.getItem("email"),
-          password: localStorage.getItem("password"),
+    var but = document.getElementById('zipcode')
+    if (but.checkValidity()) {
+      event.preventDefault();
+      axios.post("http://localhost:8000/api/me/worklocations/",
+        {
+          zipcode: parseInt(zipcode)
         },
-      }
+        {
+          auth: {
+            username: localStorage.getItem("email"),
+            password: localStorage.getItem("password"),
+          },
+        }
 
-    )
-      .then((response) => {
-        setLocation(prevLocation => ([...prevLocation, response.data]));
+      )
+        .then((response) => {
+          setLocation(prevLocation => ([...prevLocation, response.data]));
+          Swal.fire({
+            title: 'Succès!',
+            text: 'Code postal ajouté',
+            icon: 'success',
+            confirmButtonText: 'Ok',
+            confirmButtonColor: '#ffde59'
+          })
 
-      })
-      .catch((error) => { console.log(error) })
+
+        })
+        .catch((error) => { console.log(error) })
+
+    }
+
 
   }
   const handleClickDate = (event) => {
@@ -288,6 +314,14 @@ const Profil = () => {
     )
       .then((response) => {
         setAvailabilities(prevAvailabilities => ([...prevAvailabilities, response.data]));
+        Swal.fire({
+          title: 'Succès!',
+          text: 'Disponibilité ajoutée',
+          icon: 'success',
+          confirmButtonText: 'Ok',
+          confirmButtonColor: '#ffde59'
+        })
+
 
       })
       .catch((error) => { console.log(error) })
@@ -431,7 +465,7 @@ const Profil = () => {
           <span><strong>Attention ! </strong>Vous devez remplir vos informations personnelles, votre localisation ainsi que vos disponibilités !</span>
         </div>
       )
-    } else if (location.length === 0 && availabilities.length == 0) {
+    } else if (location.length === 0 && availabilities.length === 0) {
       return (
         <div className="warning">
 
@@ -523,12 +557,16 @@ const Profil = () => {
               <div key={key1}>
                 <p>{feature.name}</p>
                 {feature.multiple_choices ?
-                  <select multiple={true} name={feature.name} value={choix[feature.name]} onChange={handleChange2}>
-                    {feature.features.map((value, key2) => (
-                      <option value={value.id} key={key2}>{value.description}</option>
+                  <>
+                    <p>(ctrl+clic pour en selectionner plusieurs)</p>
+                    <select multiple={true} name={feature.name} value={choix[feature.name]} onChange={handleChange2}>
+                      {feature.features.map((value, key2) => (
+                        <option value={value.id} key={key2}>{value.description}</option>
 
-                    ))}
-                  </select>
+                      ))}
+                    </select>
+                  </>
+
                   :
                   <select multiple={false} name={feature.name} value={choix[feature.name]} onChange={handleChange2}>
                     {feature.features.map((value, key2) => (
@@ -552,7 +590,7 @@ const Profil = () => {
             <label>Code postal :</label>
 
 
-            <input type="text" pattern="^((^00000(|-0000))|(\d{5}(|-\d{4})))$" title="Code postal à 5 chiffres" value={zipcode} placeholder="ex:75005" onChange={handleZipcode} />
+            <input type="text" pattern="^((^00000(|-0000))|(\d{5}(|-\d{4})))$" title="Code postal à 5 chiffres" value={zipcode} placeholder="ex:75005" onChange={handleZipcode} id="zipcode" />
           </div>
           <div className="profil-button">
             <input type="submit" value="Ajouter" onClick={handleClick} />
@@ -564,9 +602,9 @@ const Profil = () => {
           <h1>Localisations</h1>
           {location.length === 0 ? <p>aucun code postal renseigné</p> : location.map((locations, key) => (
             <div className="zipcodes" key={key}>
-              <p>Code postal : {locations.zipcode} {locations.city}</p>
-              <button type="submit" className="zipbutton-yellow" onClick={() => { handleClickZip(locations.id) }}>Supprimer</button>
+              <p>Code postal : {locations.zipcode}&nbsp;&nbsp;&nbsp;{locations.city}</p>
               <button type="submit" className="zipbutton" onClick={() => { handleClickZipMod(locations.id) }}>Modifier</button>
+              <button type="submit" className="zipbutton-yellow" onClick={() => { handleClickZip(locations.id) }}>Supprimer</button>
             </div>
           ))}
 
@@ -596,8 +634,8 @@ const Profil = () => {
             <div className="zipcodes" key={key}>
               <p>Date de début : {format(availability.start)}</p>
               <p>Date de fin : {format(availability.end)}</p>
-              <button type="submit" className="zipbutton-yellow" onClick={() => { handleClickAvailabilities(availability.id) }}>Supprimer</button>
               <button type="submit" className="zipbutton" onClick={() => { handleClickAvailabilitiesMod(availability.id) }}>Modifier</button>
+              <button type="submit" className="zipbutton-yellow" onClick={() => { handleClickAvailabilities(availability.id) }}>Supprimer</button>
             </div>
           ))}
 

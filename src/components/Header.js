@@ -131,6 +131,9 @@ const Header = () => {
                       <Dropdown.Item value="profil">
                         <Link to="/profil">Profil</Link>
                       </Dropdown.Item>
+                      <Dropdown.Item value="mission">
+                        <Link to="/mission">Missions du moment</Link>
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                   <Dropdown></Dropdown>

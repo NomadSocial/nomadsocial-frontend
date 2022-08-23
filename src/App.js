@@ -17,6 +17,7 @@ import Company from "./pages/Company";
 import Independant from "./pages/Independant";
 import Profil from "./pages/Profil";
 import HomeLiberal from "./pages/HomeLiberal";
+import Mission from "./pages/Mission";
 
 // Import des icones
 
@@ -35,6 +36,9 @@ function App() {
         <Route path="/independant" element={<Independant />} />
         <Route path="/homeliberal" element={<HomeLiberal />} />
         <Route path="/profil" element={<Profil />} />
+        <Route path="/mission" element={<Mission />} />
+
+
       </Routes>
       <Footer />
     </Router>
