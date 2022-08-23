@@ -16,9 +16,11 @@ const HomeLiberal = () => {
           <p>
             Voici votre espace privé où vous retrouverez toutes les informations
             sur votre profil d'indépendant, ainsi que l'espace NS School et tout
-            ce dont vous aurez besoin pour exercer votre activité
+            ce dont vous aurez besoin pour exercer votre activité.
           </p>
         </div>
+        <br />
+
         <div className="checklist-home-liberal">
           <h3>Votre checklist pour faire vos premiers pas :</h3>
           <div className="checklist">

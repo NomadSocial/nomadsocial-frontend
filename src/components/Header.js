@@ -56,10 +56,6 @@ const Header = () => {
                       <Dropdown.Item value="indépendant">
                         <Link to="/signupliberal">Je suis un Indépendant </Link>
                       </Dropdown.Item>
-
-                      <Dropdown.Item value="company">
-                        <Link to="/signupcompany">Je suis une Entreprise</Link>
-                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
 
@@ -74,9 +70,6 @@ const Header = () => {
                     <Dropdown.Menu>
                       <Dropdown.Item value="indépendant">
                         <Link to="/loginliberal">Je suis un Indépendant</Link>
-                      </Dropdown.Item>
-                      <Dropdown.Item value="company">
-                        <Link to="/logincompany">Je suis une Entreprise</Link>
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
@@ -102,7 +95,9 @@ const Header = () => {
                   </button>
                 </div>
                 <div>
-                  <span className="nav-menu">Nomad Social</span>
+                  <span className="nav-menu" onClick={() => navigate("/team")}>
+                    Nomad Social
+                  </span>
                 </div>
                 <button
                   className="nav-menu"

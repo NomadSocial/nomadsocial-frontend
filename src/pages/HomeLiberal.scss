@@ -1,12 +1,14 @@
 .main-home-liberal {
-  border: blue solid 2px;
   font-family: "Alatsi", sans-serif;
+  color: #5b5b5b;
+
   h1 {
     color: #38b6ff;
     font-size: 24px;
     margin-left: 10px;
     margin-top: 10px;
   }
+
   .title-home-liberal {
     height: 100%;
     display: flex;
@@ -18,10 +20,30 @@
       margin-left: 60px;
     }
   }
+  .top-home-liberal {
+    h1 {
+      text-align: center;
+      color: #ffde59;
+    }
+    p {
+      text-align: center;
+      font-style: italic;
+      margin-left: 20px;
+      margin-right: 20px;
+      font-size: 21px;
+    }
+  }
   .checklist-home-liberal {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    h3 {
+      font-size: 21px;
+    }
     .checklist {
       display: flex;
       flex-direction: column;
+      gap: 10px;
     }
     img {
       width: 30px;

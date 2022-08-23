@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const SignUpLiberal = ({ handleToken }) => {
+const SignUpLiberal = () => {
   const [email, setEmail] = useState("");
   const [userName, setName] = useState("");
   const [userLastName, setLastName] = useState("");

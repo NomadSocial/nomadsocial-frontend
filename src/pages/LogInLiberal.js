@@ -2,10 +2,10 @@ import "./LogInLiberal.scss";
 
 import { useState } from "react";
 
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const LogInLiberal = ({ handleToken }) => {
+const LogInLiberal = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -13,13 +13,11 @@ const LogInLiberal = ({ handleToken }) => {
   const handleEmailChange = (event) => {
     const value = event.target.value;
     setEmail(value);
-    console.log(value);
   };
 
   const handlePasswordChange = (event) => {
     const value = event.target.value;
     setPassword(value);
-    console.log(value);
   };
 
   const handleSubmit = async (event) => {
