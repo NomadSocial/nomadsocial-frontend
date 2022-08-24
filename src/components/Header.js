@@ -41,7 +41,12 @@ const Header = () => {
                   </button>
                 </div>
                 <div>
-                  <span className="nav-menu">Nomad Social</span>
+                  <button
+                    className="nav-menu"
+                    onClick={() => navigate("/team")}
+                  >
+                    Nomad Social
+                  </button>
                 </div>
                 <div className="button">
                   <Dropdown>
@@ -125,6 +130,9 @@ const Header = () => {
 
                       <Dropdown.Item value="profil">
                         <Link to="/profil">Profil</Link>
+                      </Dropdown.Item>
+                      <Dropdown.Item value="mission">
+                        <Link to="/mission">Missions du moment</Link>
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>

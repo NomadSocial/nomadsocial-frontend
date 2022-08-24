@@ -23,7 +23,9 @@ const Footer = ({ userToken, handleToken }) => {
           <h3>Nomad Social</h3>
           <span onClick={() => navigate("/loginliberal")}>Se connecter</span>
           <span onClick={() => navigate("/company")}>Entreprise</span>
-          <span onClick={() => navigate("/liberal")}>Travailleur social</span>
+          <span onClick={() => navigate("/independent")}>
+            Travailleur social
+          </span>
           <span onClick={() => navigate("/")}>FAQ</span>
         </div>
         <div className="discover">
