@@ -9,7 +9,7 @@ import instagram from "../assets/img/instagram.png";
 import social from "../assets/img/social.png";
 import linkedin from "../assets/img/linkedin.png";
 
-const Footer = ({ userToken, handleToken }) => {
+const Footer = () => {
   const navigate = useNavigate();
   return (
     <>
@@ -36,7 +36,7 @@ const Footer = ({ userToken, handleToken }) => {
         </div>
         <div className="ressource">
           <h3>Ressources</h3>
-          <span>Mentions légales</span>
+          <a href="https://fr.indeed.com/">Mentions légales</a>
           <span>Conditions générales</span>
           <span>Données personnelles</span>
           <span>Mandat de facturation</span>

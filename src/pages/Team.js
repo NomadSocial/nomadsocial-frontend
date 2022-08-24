@@ -1,6 +1,5 @@
 import "./Team.scss";
-import imgtarifs from "../assets/img/Tarifs.png";
-import logoentreprise from "../assets/img/entreprise.png";
+
 import star from "../assets/img/star.png";
 
 import { useNavigate } from "react-router-dom";
@@ -9,138 +8,74 @@ const Team = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="main">
-        <div className="top-main">
-          <div className="title-entreprise">
-            <img src={logoentreprise} alt="" />
-            <h1>Espace Indépendant</h1>
-            <br />
-            <br />
-          </div>
-          <div className="list-one">
-            <p>1. Je m'inscris sur la platerforme</p>
-            <p>2. Je définis bien mes critères d'exigences</p>
-          </div>
-          <div className="list-two">
-            <p>
-              3. L'algorithme Nomad Social trouve automatiquement les bonnes
-              missions
-            </p>
-            <p>4. Je me propose sur les missions qui m'intéressent</p>
-          </div>
-          <div className="list-three">
-            <p>
-              5. L'entreprise valide votre profil et votre mission peut démarrer
-              !
-            </p>
-          </div>
-        </div>
-        <div className="checklist-entreprise">
-          <h1>Pourquoi s'inscrire sur Nomad Social ?</h1>
-          <div className="checklist">
-            <div className="list">
-              <label>
-                <img src={star} alt="" />
-              </label>
-              <span>
-                Vous êtes accompagné.es pas à pas pour créer votre statut
-                d'indépendant grâce à la NS School, espace en ligne gratuit
-              </span>
-            </div>
-            <div className="list">
-              <label>
-                <img src={star} alt="" />
-              </label>
-              <span>
-                Facturation automatique auprès de vos clients, gratuitement
-              </span>
-            </div>
-            <div className="list">
-              <label>
-                <img src={star} alt="" />
-              </label>
-              <span>
-                Un taux horaire brut très attractif avec 22% de gain
-                supplémentaire
-              </span>
-            </div>
-            <div className="list">
-              <label>
-                <img src={star} alt="" />
-              </label>
-              <span>La liberté de choisir vos périodes de travail</span>
-            </div>
-            <div className="list">
-              <label>
-                <img src={star} alt="" />
-              </label>
-              <span>
-                La possibilité de travailler en nomade et découvrir notre belle
-                France
-              </span>
-            </div>
-          </div>
-        </div>
-        <br />
-
-        <div className="contact-independant">
-          <div>
-            <button onClick={() => navigate("/signupliberal")}>
-              Je crée mon profil maintenant
-            </button>
-          </div>
-          <div>
-            <button>Je souhaite être contacté.e</button>
-          </div>
-        </div>
-      </div>
-      <div className="tarif">
-        <h1> Comment fonctionne la rémunération ?</h1>
-        <p>
-          Nous avons à coeur d'assurer un taux horaire brut plancher pour nos
-          indépendants, pour ce faire vous trouverez ci-dessous nos
-          recommandations :
-        </p>
-        <img src={imgtarifs} alt="" />
-        <p>
-          Nos frais de service s'élève à 10% du taux horaire brut. <br />
-          <span className="italic">
-            Exemple: Pour un taux horaire brut de 14e/h, nous prenons 1,40e/h
-          </span>
-        </p>
-
-        <br />
-
-        <p>
-          La TVA de 20% ne s'applique que sur nos frais de service auprès de la
-          structure accueillant l'indépendant. <br />
-          <span className="italic">
-            Exemple: En se basant sur le taux horaire brut de 20e, la TVA
-            s'applique uniquement sur 2e. Le montant de la TVA est donc de 2e *
-            0,2 = 0,40e. Ainsi, pour un taux de 20e HT, on obtient un taux de
-            20,40e TTC.
-          </span>
-        </p>
-
-        <h1> Les avantages ?</h1>
-        <span>
+      <div className="container-team">
+        <div className="top-team">
+          <h1>Qu'est ce que Nomad Social ?</h1>
           <p>
-            Pas de paiement de charges patronales, d'indemnités de fin de
-            contrat ou de congés payés
+            Nomad Social, c'est une plateforme de mise en relation, dont
+            l'objectif est de redynamiser le secteur du Social
           </p>
-        </span>
-        <span>
-          <p>Recrutement simplifié avec un contrat de mission proposé</p>
-        </span>
-        <span>
-          <p>Plus de candidat possible grâce à la nomadité</p>
-        </span>
-        <span>
+          <div className="list-top-team">
+            <div>
+              <label>
+                <img src={star} alt="" />
+              </label>
+              <span> Un meilleur revenu pour les travailleurs sociaux</span>
+            </div>
+            <div>
+              <label>
+                <img src={star} alt="" />
+              </label>
+              <span>
+                Un équilibre financier pour les structures
+                {"(entreprises publiques, privées, hôpitaux et associations)"}
+              </span>
+            </div>
+          </div>
+          <p className="italic-team">
+            Enfin une situation gagnant-gagnant pour tout le monde !
+          </p>
+        </div>
+        <div className="middle-team">
+          <h1>Une plateforme à impact et responsable</h1>
           <p>
-            Sans coût supplémentaire, une rémunération supplémentaire pour
-            l'indépendant social
+            Une plateforme entièrement dédiée à redynamiser et équilibrer le
+            secteur du Social. Ainsi les publics en état de faiblesse, ayant
+            besoin de l'attention des travailleurs sociaux, auront les soins, le
+            soutient dont ils ont besoin sans sacrifice et situation dramatique.
           </p>
-        </span>
+        </div>
+        <div className="bottom-team">
+          <h1>Une équipe à l'écoute et bienveillante</h1>
+          <br />
+          <div className="team">
+            <div>
+              <div className="photo"></div>
+              <p>
+                Rita Verissimo <br />
+                Fondatrice
+              </p>
+            </div>
+            <div>
+              <div className="photo"></div>
+              <p>
+                Maurine Cornillon <br /> Ingénieure FE
+              </p>
+            </div>
+            <div>
+              <div className="photo"></div>
+              <p>
+                Selim Djeghdir <br /> Ingénieur FE
+              </p>
+            </div>
+            <div>
+              <div className="photo"></div>
+              <p>
+                Ahmed Chaudhry <br /> Ingénieur FE
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
