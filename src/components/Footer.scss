@@ -57,5 +57,69 @@
   a {
     outline: none;
     text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    display: none;
+
+    .left-footer {
+      img {
+        object-fit: cover;
+        width: 160px;
+      }
+      img:hover {
+        cursor: pointer;
+      }
+    }
+    h3 {
+      color: #38b6ff;
+      font-size: 16px;
+    }
+
+    .socialnetwork {
+      height: 100px;
+      .logo-rs {
+        display: flex;
+        justify-content: space-between;
+        img {
+          object-fit: cover;
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+
+    .nomadsocial {
+      display: flex;
+      flex-direction: column;
+      height: 100px;
+    }
+    .discover {
+      display: flex;
+      flex-direction: column;
+      height: 100px;
+    }
+    .ressource {
+      display: flex;
+      flex-direction: column;
+      height: 100px;
+    }
+    span:hover {
+      cursor: pointer;
+    }
+    a {
+      outline: none;
+      text-decoration: none;
+      color: black;
+    }
+    a:hover {
+      color: black;
+    }
   }
 }

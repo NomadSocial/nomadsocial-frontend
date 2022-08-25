@@ -32,9 +32,11 @@ const Team = () => {
               </span>
             </div>
           </div>
-          <p className="italic-team">
-            Enfin une situation gagnant-gagnant pour tout le monde !
-          </p>
+          <div className="test">
+            <p className="italic-team">
+              Enfin une situation gagnant-gagnant pour tout le monde !
+            </p>
+          </div>
         </div>
         <div className="middle-team">
           <h1>Une plateforme à impact et responsable</h1>

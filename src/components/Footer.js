@@ -23,7 +23,7 @@ const Footer = () => {
           <h3>Nomad Social</h3>
           <span onClick={() => navigate("/loginliberal")}>Se connecter</span>
           <span onClick={() => navigate("/company")}>Entreprise</span>
-          <span onClick={() => navigate("/independent")}>
+          <span onClick={() => navigate("/independant")}>
             Travailleur social
           </span>
           <span onClick={() => navigate("/")}>FAQ</span>
@@ -36,10 +36,18 @@ const Footer = () => {
         </div>
         <div className="ressource">
           <h3>Ressources</h3>
-          <a href="https://fr.indeed.com/">Mentions légales</a>
-          <span>Conditions générales</span>
-          <span>Données personnelles</span>
-          <span>Mandat de facturation</span>
+          <a href="https://docs.google.com/document/d/1emsgOo3nYh17c5kkSArlTsanWr1nHgXOL0vwm_H5ojM/edit#heading=h.pr3b63u52e0">
+            Mentions légales
+          </a>
+          <a href="https://docs.google.com/document/d/160t19dGPJfL9slesTqoHt_A6nQ5LClRaPNcLSfxsxSw/edit">
+            Conditions générales
+          </a>
+          <a href="https://docs.google.com/document/d/1JpOA016jqLEiL2K_F01FXBwGAVsZsL_D1X_2_67uWjo/edit#heading=h.w3ls46lgc8dy">
+            Données personnelles
+          </a>
+          <a href="https://docs.google.com/document/d/14OepOwMrYfmWmz-mogR3gWUehhK2713qRhmY89DMtNY/edit">
+            Mandat de facturation
+          </a>
         </div>
         <div className="socialnetwork">
           <h3>Réseaux Sociaux</h3>

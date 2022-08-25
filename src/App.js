@@ -19,6 +19,7 @@ import Profil from "./pages/Profil";
 import HomeLiberal from "./pages/HomeLiberal";
 import Mission from "./pages/Mission";
 import Team from "./pages/Team";
+import Renfort from "./pages/Renfort";
 
 // Import des icones
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="/profil" element={<Profil />} />
         <Route path="/mission" element={<Mission />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/renfort" element={<Renfort />} />
       </Routes>
       <Footer />
     </Router>

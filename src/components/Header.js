@@ -18,7 +18,12 @@ const Header = () => {
           </div>
         </div>
         <div>
-          <span className="nav-menu-renfort">SOS Renfort</span>
+          <span
+            className="nav-menu-renfort"
+            onClick={() => navigate("/renfort")}
+          >
+            SOS Renfort
+          </span>
         </div>
         <div className="right-header">
           <div className="contact">

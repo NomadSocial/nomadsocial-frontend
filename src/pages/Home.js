@@ -2,6 +2,8 @@ import "./Home.scss";
 import { useNavigate } from "react-router-dom";
 
 import imghome from "../assets/img/Homeimg.jpg";
+import liberalhome from "../assets/img/liberalhome.png";
+import entreprisehome from "../assets/img/entreprisehome.png";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -29,6 +31,7 @@ const Home = () => {
           <div className="test">
             <div className="encart">
               <div className="left-encart">
+                <img src={entreprisehome} alt="" />
                 <h2 className="bleu">Entreprise</h2>
                 <p>Trouvez rapidement l'aide dont vous avez besoin</p>
                 <button onClick={() => navigate("/company")}>
@@ -37,6 +40,7 @@ const Home = () => {
               </div>
 
               <dv className="right-encart">
+                <img src={liberalhome} alt="" />
                 <h2 className="bleu">Independant</h2>
                 <p>Une nouvelle liberté de travailler, mieux rémunéré</p>
                 <button onClick={() => navigate("/independant")}>

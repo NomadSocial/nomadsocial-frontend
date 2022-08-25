@@ -115,3 +115,9 @@ header {
   width: 100%;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+  .nav-menu-renfort {
+    display: none;
+  }
+}
