@@ -2,10 +2,7 @@ import "./Team.scss";
 
 import star from "../assets/img/star.png";
 
-import { useNavigate } from "react-router-dom";
-
 const Team = () => {
-  const navigate = useNavigate();
   return (
     <>
       <div className="container-team">

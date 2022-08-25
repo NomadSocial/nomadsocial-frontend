@@ -1,7 +1,7 @@
 import "./Profil.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
+import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import fr from "date-fns/locale/fr";
 import Swal from "sweetalert2";
@@ -132,10 +132,10 @@ const Profil = () => {
     setName(value);
   };
 
-  const handleDescription = (event) => {
-    const value = event.target.value;
-    setDescription(value);
-  };
+  // const handleDescription = (event) => {
+  //   const value = event.target.value;
+  //   setDescription(value);
+  // };
   const handleZipcode = (event) => {
     event.preventDefault();
     const value = event.target.value;
