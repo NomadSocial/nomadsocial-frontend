@@ -1,6 +1,8 @@
 import "./Home.scss";
+import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 
+//Images
 import imghome from "../assets/img/Homeimg.jpg";
 import liberalhome from "../assets/img/liberalhome.png";
 import entreprisehome from "../assets/img/entreprisehome.png";
@@ -27,32 +29,29 @@ const Home = () => {
             <img src={imghome} alt="" />
           </div>
         </div>
-        <div className="container">
-          <div className="test">
-            <div className="encart">
-              <div className="left-encart">
-                <img src={entreprisehome} alt="" />
-                <h2 className="bleu">Entreprise</h2>
-                <p>Trouvez rapidement l'aide dont vous avez besoin</p>
-                <button onClick={() => navigate("/company")}>
-                  Je cherche de l'aide
-                </button>
-              </div>
+        <div className="body">
+          <div className="encart">
+            <div className="left-encart">
+              <img src={entreprisehome} alt="" />
+              <h2 className="bleu">Entreprise</h2>
+              <p>Trouvez rapidement l'aide dont vous avez besoin</p>
+              <button onClick={() => navigate("/company")}>
+                Je cherche de l'aide
+              </button>
+            </div>
 
-              <dv className="right-encart">
-                <img src={liberalhome} alt="" />
-                <h2 className="bleu">Independant</h2>
-                <p>Une nouvelle liberté de travailler, mieux rémunéré</p>
-                <button onClick={() => navigate("/independant")}>
-                  Je cherche une mission
-                </button>
-              </dv>
+            <div className="right-encart">
+              <img src={liberalhome} alt="" />
+              <h2 className="bleu">Independant</h2>
+              <p>Une nouvelle liberté de travailler, mieux rémunéré</p>
+              <button onClick={() => navigate("/independant")}>
+                Je cherche une mission
+              </button>
             </div>
           </div>
         </div>
       </div>
-
-      <br />
+      <Footer />
     </>
   );
 };

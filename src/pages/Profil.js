@@ -11,7 +11,6 @@ const Profil = () => {
   const [email, setEmail] = useState("");
   const [userName, setName] = useState("");
   const [userLastName, setLastName] = useState("");
-  const [description, setDescription] = useState([]);
   const [features, setFeatures] = useState([]);
   const [choix, setChoix] = useState({});
   const [zipcode, setZipcode] = useState("");
@@ -20,6 +19,10 @@ const Profil = () => {
   const [availabilities, setAvailabilities] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+  const [permis, setPermis] = useState(false);
+  const [diplome, setDiplome] = useState(0);
+  const [siret, setSiret] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     axios
@@ -33,6 +36,10 @@ const Profil = () => {
         setLastName(response.data["last_name"]);
         setEmail(response.data["email"]);
         setName(response.data["first_name"]);
+        setPermis(response.data["driving_license"]);
+        setDiplome(response.data["year_experience"]);
+        setSiret(response.data["siret"]);
+        setDescription(response.date["description"]);
       })
       .catch((error) => {
         console.log(error);
@@ -119,28 +126,42 @@ const Profil = () => {
   const handleEmailChange = (event) => {
     const value = event.target.value;
     setEmail(value);
-    console.log(value);
+  };
+
+  const handleDescription = (event) => {
+    const value = event.target.value;
+    setDescription(value);
   };
 
   const handleUserLastNameChange = (event) => {
     const value = event.target.value;
     setLastName(value);
-    console.log(value);
   };
   const handleUserChange = (event) => {
     const value = event.target.value;
     setName(value);
   };
 
-  // const handleDescription = (event) => {
-  //   const value = event.target.value;
-  //   setDescription(value);
-  // };
   const handleZipcode = (event) => {
     event.preventDefault();
     const value = event.target.value;
     setZipcode(value);
   };
+  const handleDiplome = (event) => {
+    event.preventDefault();
+    const value = event.target.value;
+    setDiplome(value);
+  };
+  const handleSiret = (event) => {
+    event.preventDefault();
+    const value = event.target.value;
+    setSiret(value);
+  };
+
+  const handlePermis = () => {
+    setPermis(!permis);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     axios
@@ -151,6 +172,10 @@ const Profil = () => {
           email: email,
           first_name: userName,
           last_name: userLastName,
+          driving_license: permis,
+          year_experience: diplome,
+          siret: siret,
+          description: description,
         },
         {
           auth: {
@@ -168,27 +193,6 @@ const Profil = () => {
           confirmButtonColor: "#ffde59",
         });
       })
-      .catch((error) => {
-        console.log(error.response.data);
-      });
-  };
-  const handleSubmitTwo = async (event) => {
-    event.preventDefault();
-    axios
-      .post(
-        "http://localhost:8000/api/me/features/",
-
-        {
-          features: [description],
-        },
-        {
-          auth: {
-            username: localStorage.getItem("email"),
-            password: localStorage.getItem("password"),
-          },
-        }
-      )
-      .then((response) => {})
       .catch((error) => {
         console.log(error.response.data);
       });
@@ -528,44 +532,97 @@ const Profil = () => {
     <>
       <WarningBanner warn={showwarning} />
       <div className="profil-container">
-        <form onSubmit={handleSubmit}>
-          <h1>Modifier mon profil</h1>
-          <div className="profil">
-            <label>Email :</label>
+        <div className="center">
+          <form onSubmit={handleSubmit}>
+            <h1>Modifier mon profil</h1>
+            <div className="profil">
+              <label>Email :</label>
 
-            <input type="email" value={email} onChange={handleEmailChange} />
-          </div>
-          <div className="profil">
-            <label>Nom :</label>
+              <input type="email" value={email} onChange={handleEmailChange} />
+            </div>
+            <div className="profil">
+              <label>Nom :</label>
 
-            <input
-              type="string"
-              value={userLastName}
-              onChange={handleUserLastNameChange}
-            />
-          </div>
-          <div className="profil">
-            <label>Prenom :</label>
+              <input
+                type="string"
+                value={userLastName}
+                onChange={handleUserLastNameChange}
+              />
+            </div>
+            <div className="profil">
+              <label>Prénom :</label>
 
-            <input type="string" value={userName} onChange={handleUserChange} />
-          </div>
-          <div className="profil-button">
-            <input type="submit" value="Modifier" />
-          </div>
-        </form>
-      </div>
-      <div className="profil">
-        <div className="">
-          <h2>Informations personnelles</h2>
+              <input
+                type="string"
+                value={userName}
+                onChange={handleUserChange}
+              />
+            </div>
+            <div className="profil">
+              <label>Numéro SIRET :</label>
+
+              <input type="text" value={siret} onChange={handleSiret} />
+            </div>
+            <div className="profil">
+              <label>Description :</label>
+              <textarea
+                className="description"
+                type="text"
+                value={description}
+                onChange={handleDescription}
+              />
+            </div>
+            <div className="profil">
+              <label>Années d'expériences :</label>
+              <select
+                className="select"
+                value={diplome}
+                onChange={handleDiplome}
+              >
+                <option value="0">Jeune diplômé</option>
+                <option value="1">0 à 3 ans d'expériences</option>
+                <option value="2">4 à 8 ans d'expériences</option>
+                <option value="3">+8 ans d'expériences</option>
+              </select>
+            </div>
+
+            <div className="profil">
+              <label>Permis B :</label>
+
+              <input type="checkbox" checked={permis} onChange={handlePermis} />
+            </div>
+            <div className="profil-button">
+              <input type="submit" value="Valider" />
+            </div>
+          </form>
+        </div>
+        <div className="center">
           <form onSubmit={handleSubmit3}>
-            {features.map((feature, key1) => (
-              <div key={key1}>
-                <p>{feature.name}</p>
-                {feature.multiple_choices ? (
-                  <>
-                    <p>(ctrl+clic pour en selectionner plusieurs)</p>
+            <h1>Informations personnelles</h1>
+            <div>
+              {features.map((feature, key1) => (
+                <div className="profil" key={key1}>
+                  <p>{feature.name}</p>
+                  {feature.multiple_choices ? (
+                    <>
+                      {/* <p>(ctrl+clic pour en selectionner plusieurs)</p> */}
+                      <select
+                        className="select-informations"
+                        multiple={true}
+                        name={feature.name}
+                        value={choix[feature.name]}
+                        onChange={handleChange2}
+                      >
+                        {feature.features.map((value, key2) => (
+                          <option value={value.id} key={key2}>
+                            {value.description}
+                          </option>
+                        ))}
+                      </select>
+                    </>
+                  ) : (
                     <select
-                      multiple={true}
+                      multiple={false}
                       name={feature.name}
                       value={choix[feature.name]}
                       onChange={handleChange2}
@@ -576,141 +633,121 @@ const Profil = () => {
                         </option>
                       ))}
                     </select>
-                  </>
-                ) : (
-                  <select
-                    multiple={false}
-                    name={feature.name}
-                    value={choix[feature.name]}
-                    onChange={handleChange2}
-                  >
-                    {feature.features.map((value, key2) => (
-                      <option value={value.id} key={key2}>
-                        {value.description}
-                      </option>
-                    ))}
-                  </select>
-                )}
-              </div>
-            ))}
-            <br />
-            <button type="submit">Valider</button>
+                  )}
+                </div>
+              ))}
+              <br />
+            </div>
+            <div className="profil-button">
+              <input type="submit" value="Valider" />
+            </div>
           </form>
         </div>
-      </div>
-      <div className="profil-container">
-        <form>
-          <h1>Localisation</h1>
-          <div className="profil">
-            <label>Code postal :</label>
 
-            <input
-              type="text"
-              pattern="^((^00000(|-0000))|(\d{5}(|-\d{4})))$"
-              title="Code postal à 5 chiffres"
-              value={zipcode}
-              placeholder="ex:75005"
-              onChange={handleZipcode}
-              id="zipcode"
-            />
-          </div>
-          <div className="profil-button">
-            <input type="submit" value="Ajouter" onClick={handleClick} />
-          </div>
-        </form>
-      </div>
-      <div className="home">
-        <div className="left-home">
-          <h1>Localisations</h1>
-          {location.length === 0 ? (
-            <p>aucun code postal renseigné</p>
-          ) : (
-            location.map((locations, key) => (
-              <div className="zipcodes" key={key}>
-                <p>
-                  Code postal : {locations.zipcode}&nbsp;&nbsp;&nbsp;
-                  {locations.city}
-                </p>
-                <button
-                  type="submit"
-                  className="zipbutton"
-                  onClick={() => {
-                    handleClickZipMod(locations.id);
-                  }}
-                >
-                  Modifier
-                </button>
-                <button
-                  type="submit"
-                  className="zipbutton-yellow"
-                  onClick={() => {
-                    handleClickZip(locations.id);
-                  }}
-                >
-                  Supprimer
-                </button>
-              </div>
-            ))
-          )}
+        <div className="center">
+          <form>
+            <h1>Localisation</h1>
+            <div className="profil">
+              <label>Code postal :</label>
+
+              <input
+                type="text"
+                pattern="^((^00000(|-0000))|(\d{5}(|-\d{4})))$"
+                title="Code postal à 5 chiffres"
+                value={zipcode}
+                placeholder="ex: 75005"
+                onChange={handleZipcode}
+                id="zipcode"
+              />
+            </div>
+            <div className="profil-button">
+              <input type="submit" value="Ajouter" onClick={handleClick} />
+            </div>
+            {location.length === 0 ? (
+              <p>aucun code postal renseigné</p>
+            ) : (
+              location.map((locations, key) => (
+                <div className="zipcodes" key={key}>
+                  <p>
+                    Code postal : {locations.zipcode}&nbsp;&nbsp;&nbsp;
+                    {locations.city}
+                  </p>
+                  <button
+                    type="submit"
+                    className="zipbutton"
+                    onClick={() => {
+                      handleClickZipMod(locations.id);
+                    }}
+                  >
+                    Modifier
+                  </button>
+                  <button
+                    type="submit"
+                    className="zipbutton-yellow"
+                    onClick={() => {
+                      handleClickZip(locations.id);
+                    }}
+                  >
+                    Supprimer
+                  </button>
+                </div>
+              ))
+            )}
+          </form>
         </div>
-      </div>
-      <div className="profil-container">
-        <form>
-          <h1>Disponibilités</h1>
-          <div className="profil">
-            <label>date de début :</label>
-            <DatePicker
-              selected={startDate}
-              locale="fr"
-              dateFormat="dd/MM/yyyy"
-              onChange={(date) => setStartDate(date)}
-            />
-          </div>
-          <div className="profil">
-            <label>date de fin :</label>
-            <DatePicker
-              selected={endDate}
-              locale="fr"
-              dateFormat="dd/MM/yyyy"
-              onChange={(date) => setEndDate(date)}
-            />
-          </div>
-          <div className="profil-button">
-            <input type="submit" value="Ajouter" onClick={handleClickDate} />
-          </div>
-        </form>
-      </div>
-      <div className="home">
-        <div className="left-home">
-          <h1>Disponibilités</h1>
-          {availabilities.length === 0 ? (
-            <p>aucune disponibilités renseignées</p>
-          ) : (
-            availabilities.map((availability, key) => (
-              <div className="zipcodes" key={key}>
-                <p>Date de début : {format(availability.start)}</p>
-                <p>Date de fin : {format(availability.end)}</p>
-                <button
-                  type="submit"
-                  className="zipbutton"
-                  onClick={() => {
-                    handleClickAvailabilitiesMod(availability.id);
-                  }}
-                >
-                  Modifier
-                </button>
-                <button
-                  type="submit"
-                  className="zipbutton-yellow"
-                  onClick={() => {
-                    handleClickAvailabilities(availability.id);
-                  }}
-                >
-                  Supprimer
-                </button>
-              </div>
-            ))
-          )}
+        <div className="center">
+          <form>
+            <h1>Disponibilités</h1>
+            <div className="profil-date">
+              <label>date de début :</label>
+              <DatePicker
+                selected={startDate}
+                locale="fr"
+                dateFormat="dd/MM/yyyy"
+                onChange={(date) => setStartDate(date)}
+              />
+            </div>
+            <div className="profil-date">
+              <label>date de fin :</label>
+              <DatePicker
+                selected={endDate}
+                locale="fr"
+                dateFormat="dd/MM/yyyy"
+                onChange={(date) => setEndDate(date)}
+              />
+            </div>
+            <div className="profil-button">
+              <input type="submit" value="Ajouter" onClick={handleClickDate} />
+            </div>
+            {availabilities.length === 0 ? (
+              <p>aucune disponibilités renseignées</p>
+            ) : (
+              availabilities.map((availability, key) => (
+                <div className="zipcodes" key={key}>
+                  <p>Date de début : {format(availability.start)}</p>
+                  <p>Date de fin : {format(availability.end)}</p>
+                  <button
+                    type="submit"
+                    className="zipbutton"
+                    onClick={() => {
+                      handleClickAvailabilitiesMod(availability.id);
+                    }}
+                  >
+                    Modifier
+                  </button>
+                  <button
+                    type="submit"
+                    className="zipbutton-yellow"
+                    onClick={() => {
+                      handleClickAvailabilities(availability.id);
+                    }}
+                  >
+                    Supprimer
+                  </button>
+                </div>
+              ))
+            )}
+          </form>
         </div>
       </div>
     </>

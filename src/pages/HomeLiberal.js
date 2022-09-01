@@ -1,8 +1,14 @@
 import "./HomeLiberal.scss";
+import Footer from "../components/Footer";
+
+//Images
 import homeliberal from "../assets/img/homeliberal.png";
 import star from "../assets/img/star.png";
 
+import { useNavigate } from "react-router-dom";
+
 const HomeLiberal = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="main-home-liberal">
@@ -20,7 +26,6 @@ const HomeLiberal = () => {
           </p>
         </div>
         <br />
-
         <div className="checklist-home-liberal">
           <h3>Votre checklist pour faire vos premiers pas :</h3>
           <div className="checklist">
@@ -73,7 +78,28 @@ const HomeLiberal = () => {
             </div>
           </div>
         </div>
+        <br />
+        <br />
+
+        <div className="contact-independant">
+          <div className="contact-home-independant">
+            <a href="https://nsschool.notion.site/Accueil-5960c1c3a5b44b24be1f3e205d1ea149">
+              Rendez vous en FAQ
+            </a>
+          </div>
+
+          <div className="container-contact-independant">
+            <div className="contact-home-independant">
+              <a>09 77 19 59 49</a>
+            </div>
+            <div className="contact-home-independant">
+              <a href="mailto:hello@nomad-social.com">hello@nomad-social.com</a>
+            </div>
+          </div>
+        </div>
       </div>
+      <br />
+      <Footer />
     </>
   );
 };

@@ -1,4 +1,6 @@
 import "./Independant.scss";
+import Footer from "../components/Footer";
+//Images
 import imgtarifs from "../assets/img/Tarifs.png";
 import logoentreprise from "../assets/img/entreprise.png";
 import star from "../assets/img/star.png";
@@ -169,6 +171,7 @@ const Independant = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

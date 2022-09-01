@@ -1,9 +1,9 @@
 import "./Header.scss";
 import Dropdown from "react-bootstrap/Dropdown";
 
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+//Image
 import logo from "../assets/img/Logo.png";
 
 const Header = () => {
@@ -63,8 +63,8 @@ const Header = () => {
                       S'inscrire
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item value="indépendant">
-                        <Link to="/signupliberal">Je suis un Indépendant </Link>
+                      <Dropdown.Item value="indépendant" href="/signupliberal">
+                        Je suis un Indépendant
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
@@ -78,8 +78,8 @@ const Header = () => {
                       Se connecter
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item value="indépendant">
-                        <Link to="/loginliberal">Je suis un Indépendant</Link>
+                      <Dropdown.Item value="indépendant" href="/loginliberal">
+                        Je suis un Indépendant
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
@@ -129,15 +129,15 @@ const Header = () => {
                       Mon compte
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item value="home">
-                        <Link to="/homeliberal"> Home </Link>
+                      <Dropdown.Item value="home" href="/homeliberal">
+                        Home
                       </Dropdown.Item>
 
-                      <Dropdown.Item value="profil">
-                        <Link to="/profil">Profil</Link>
+                      <Dropdown.Item value="profil" href="/profil">
+                        Profil
                       </Dropdown.Item>
-                      <Dropdown.Item value="mission">
-                        <Link to="/mission">Missions du moment</Link>
+                      <Dropdown.Item value="mission" href="/mission">
+                        Missions du moment
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>

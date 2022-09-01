@@ -1,5 +1,6 @@
 import "./Renfort.scss";
 
+//Images
 import enregistrement from "../assets/img/enregistrement.png";
 import laptop from "../assets/img/laptop.png";
 import match from "../assets/img/match.png";

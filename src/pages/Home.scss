@@ -24,7 +24,7 @@
   .bleu {
     color: #38b6ff;
   }
-  .container {
+  .body {
     align-items: flex-start;
     display: flex;
     position: absolute;
@@ -34,6 +34,7 @@
       display: flex;
       width: 700px;
       justify-content: space-between;
+      padding: 10px;
 
       .left-encart {
         background-color: white;
@@ -87,13 +88,78 @@
     }
   }
 }
+.body {
+  align-items: flex-start;
+  display: flex;
+  position: absolute;
+
+  .encart {
+    margin-top: 300px;
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+
+    .left-encart {
+      background-color: white;
+      text-align: center;
+      padding: 10px;
+      width: 50%;
+      margin-right: 20px;
+      border-radius: 5px;
+      -webkit-box-shadow: 1px 1px 10px -2px #000000;
+      box-shadow: 1px 1px 10px -2px #000000;
+
+      p {
+        font-size: 20px;
+      }
+      button {
+        background-color: #ffde59;
+        color: #5b5b5b;
+        border: none;
+        width: 60%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      button:hover {
+        color: #38b6ff;
+      }
+    }
+    .right-encart {
+      background-color: white;
+      text-align: center;
+      padding: 10px;
+      width: 50%;
+      border-radius: 5px;
+      -webkit-box-shadow: 1px 1px 10px -2px #000000;
+      box-shadow: 1px 1px 10px -2px #000000;
+
+      p {
+        font-size: 20px;
+      }
+      button {
+        background-color: #ffde59;
+        color: #5b5b5b;
+        border: none;
+        width: 60%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      button:hover {
+        color: #38b6ff;
+      }
+    }
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .home {
+    border: solid red 1px;
     display: flex;
     color: #5b5b5b;
     font-family: "Alatsi", sans-serif;
     border-bottom: solid grey 1px;
+    position: absolute;
+
     .left-home {
       padding: 60px;
 
@@ -114,7 +180,7 @@
         display: none;
       }
     }
-    .container {
+    .body {
       align-items: flex-start;
       display: flex;
       position: absolute;

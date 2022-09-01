@@ -54,4 +54,30 @@
       height: 30px;
     }
   }
+
+  .contact-independant {
+    display: flex;
+    justify-content: space-around;
+    .container-contact-independant {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+    }
+    a {
+      outline: none;
+      color: #5b5b5b;
+    }
+    .contact-home-independant {
+      width: 200px;
+      height: 50px;
+      border-radius: 10px;
+      background-color: #ffde59;
+      outline: none;
+      text-align: center;
+      padding: 10px;
+    }
+    a:hover {
+      color: #38b6ff;
+    }
+  }
 }

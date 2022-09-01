@@ -10,6 +10,7 @@ const SignUpLiberal = () => {
   const [userLastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [phone, setPhone] = useState("");
   const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
@@ -37,6 +38,11 @@ const SignUpLiberal = () => {
     setConfirmPassword(value);
   };
 
+  const handlePhoneChange = (event) => {
+    const value = event.target.value;
+    setPhone(value);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -48,6 +54,7 @@ const SignUpLiberal = () => {
           first_name: userName,
           last_name: userLastName,
           password: password,
+          phone: phone,
         })
         .then((response) => navigate("/"))
         .catch((error) => console.log(error));
@@ -80,6 +87,14 @@ const SignUpLiberal = () => {
             placeholder="Email*"
             value={email}
             onChange={handleEmailChange}
+          />
+        </div>
+        <div className="contact">
+          <input
+            type="phone"
+            placeholder="Numéro de téléphone*"
+            value={phone}
+            onChange={handlePhoneChange}
           />
         </div>
         <div className="contact">

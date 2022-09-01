@@ -1,5 +1,6 @@
 import "./Team.scss";
 
+//Images
 import star from "../assets/img/star.png";
 
 const Team = () => {
@@ -31,7 +32,7 @@ const Team = () => {
           </div>
           <div className="test">
             <p className="italic-team">
-              Enfin une situation gagnant-gagnant pour tout le monde !
+              Enfin une situation gagnante-gagnante pour tout le monde !
             </p>
           </div>
         </div>

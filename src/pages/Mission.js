@@ -10,7 +10,6 @@ const Mission = () => {
   const [show, setShow] = useState(false);
   const [features, setFeatures] = useState([]);
   const [choix, setChoix] = useState([]);
-  const [nom, setNom] = useState({});
 
   useEffect(() => {
     axios

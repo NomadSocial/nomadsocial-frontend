@@ -9,6 +9,7 @@ header {
   font-size: 14px;
   border-bottom: solid 1px grey;
   color: #5b5b5b;
+
   .left-header {
     img {
       object-fit: cover;
@@ -79,6 +80,7 @@ header {
 }
 .nav-menu:hover {
   color: #38b6ff;
+  cursor: pointer;
 }
 
 // EFFET TRANSITION SOS RENFORT
@@ -113,7 +115,6 @@ header {
 .nav-menu-renfort:hover:after {
   height: 100%;
   width: 100%;
-  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
