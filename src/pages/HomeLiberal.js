@@ -5,10 +5,7 @@ import Footer from "../components/Footer";
 import homeliberal from "../assets/img/homeliberal.png";
 import star from "../assets/img/star.png";
 
-import { useNavigate } from "react-router-dom";
-
 const HomeLiberal = () => {
-  const navigate = useNavigate();
   return (
     <>
       <div className="main-home-liberal">

@@ -34,6 +34,7 @@ const Footer = () => {
           <a
             href="https://nsschool.notion.site/Accueil-5960c1c3a5b44b24be1f3e205d1ea149"
             target="_blank"
+            rel="noreferrer noopener"
           >
             NS School
           </a>
@@ -44,30 +45,35 @@ const Footer = () => {
           <a
             href="https://docs.google.com/document/d/1emsgOo3nYh17c5kkSArlTsanWr1nHgXOL0vwm_H5ojM/edit#heading=h.pr3b63u52e0"
             target="_blank"
+            rel="noreferrer noopener"
           >
             Mentions légales
           </a>
           <a
             href="https://docs.google.com/document/d/160t19dGPJfL9slesTqoHt_A6nQ5LClRaPNcLSfxsxSw/edit"
             target="_blank"
+            rel="noreferrer noopener"
           >
             Conditions générales
           </a>
           <a
             href="https://docs.google.com/document/d/1JpOA016jqLEiL2K_F01FXBwGAVsZsL_D1X_2_67uWjo/edit#heading=h.w3ls46lgc8dy"
             target="_blank"
+            rel="noreferrer noopener"
           >
             Confidentialité des données
           </a>
           <a
             href="https://docs.google.com/document/d/14OepOwMrYfmWmz-mogR3gWUehhK2713qRhmY89DMtNY/edit"
             target="_blank"
+            rel="noreferrer noopener"
           >
             Mandat de facturation
           </a>
           <a
             href="https://docs.google.com/document/d/1i9fL5WPaNW4aNq4GKZPPMMN-zD0E4vRkC9ClSORGWyE/edit"
             target="_blank"
+            rel="noreferrer noopener"
           >
             Mandat d'encaissement
           </a>

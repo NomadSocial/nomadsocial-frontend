@@ -192,7 +192,7 @@ const Mission = () => {
   function findname(list) {
     var nom = [];
     features.map((feature) => {
-      feature.features.map((value, key) => {
+      feature.features.map((value) => {
         for (let i in list) {
           if (list[i] === value.id) {
             nom.push({ key: feature.name, value: value.description });
