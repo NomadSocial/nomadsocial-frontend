@@ -2,7 +2,8 @@ import "./NsSchool.scss";
 import Footer from "../components/Footer";
 
 //Images
-import graduation from "../assets/img/graduation.png";
+
+import graduation from "../../src/assets/img/graduation.png";
 
 const NsSchool = () => {
   return (
