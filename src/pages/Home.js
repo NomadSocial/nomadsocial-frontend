@@ -42,7 +42,7 @@ const Home = () => {
 
             <div className="right-encart">
               <img src={liberalhome} alt="" />
-              <h2 className="bleu">Independant</h2>
+              <h2 className="bleu">Indépendant</h2>
               <p>Une nouvelle liberté de travailler, mieux rémunéré</p>
               <button onClick={() => navigate("/independant")}>
                 Je cherche une mission

@@ -1,5 +1,6 @@
 import "./SignUpLiberal.scss";
 
+//Import package
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -47,17 +48,32 @@ const SignUpLiberal = () => {
     event.preventDefault();
 
     if (password === confirmPassword) {
-      const url_server = `${api_url}/entrepreneurs/register/`;
+      // const url_server = "http://localhost:8000/api/";
+      // axios
+      //   .post(`${url_server}entrepreneurs/register/`, {
+      //     email: email,
+      //     first_name: userName,
+      //     last_name: userLastName,
+      //     password: password,
+      //     phone: phone,
+      //   })
+      //   .then((response) => navigate("/"))
+      //   .catch((error) => console.log(error));
+      const api_url = "http://localhost:8000/api/";
       axios
-        .post(url_server, {
+        .post(`${api_url}entrepreneurs/register/`, {
           email: email,
           first_name: userName,
           last_name: userLastName,
           password: password,
           phone: phone,
         })
-        .then((response) => navigate("/"))
-        .catch((error) => console.log(error));
+        .then((response) => {
+          navigate("/loginliberal");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } else {
       alert("Mot de passe non identique");
     }

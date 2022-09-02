@@ -1,8 +1,9 @@
 import "./Team.scss";
+import Footer from "../components/Footer";
 
 //Images
 import star from "../assets/img/star.png";
-
+import team from "../assets/img/team.jpeg";
 const Team = () => {
   return (
     <>
@@ -30,12 +31,15 @@ const Team = () => {
               </span>
             </div>
           </div>
+          <br />
           <div className="test">
             <p className="italic-team">
               Enfin une situation gagnante-gagnante pour tout le monde !
             </p>
           </div>
+          <br />
         </div>
+
         <div className="middle-team">
           <h1>Une plateforme à impact et responsable</h1>
           <p>
@@ -45,38 +49,42 @@ const Team = () => {
             soutient dont ils ont besoin sans sacrifice et situation dramatique.
           </p>
         </div>
+        <br />
         <div className="bottom-team">
           <h1>Une équipe à l'écoute et bienveillante</h1>
           <br />
+
           <div className="team">
             <div>
-              <div className="photo"></div>
               <p>
                 Rita Verissimo <br />
                 Fondatrice
               </p>
             </div>
             <div>
-              <div className="photo"></div>
               <p>
                 Maurine Cornillon <br /> Ingénieure FE
               </p>
             </div>
             <div>
-              <div className="photo"></div>
               <p>
-                Selim Djeghdir <br /> Ingénieur FE
+                Selim Djeghdir <br /> Ingénieur FS
               </p>
             </div>
             <div>
-              <div className="photo"></div>
               <p>
                 Ahmed Chaudhry <br /> Ingénieur FE
               </p>
             </div>
           </div>
+          <br />
+          <div className="container-photo">
+            <img className="photo" src={team} alt="" />
+          </div>
         </div>
       </div>
+      <br />
+      <Footer />
     </>
   );
 };

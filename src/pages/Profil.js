@@ -1,4 +1,7 @@
 import "./Profil.scss";
+import { api_url } from "./constants";
+
+//Import package
 import { useEffect, useState } from "react";
 import axios from "axios";
 import DatePicker, { registerLocale } from "react-datepicker";

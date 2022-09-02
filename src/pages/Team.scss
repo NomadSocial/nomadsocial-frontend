@@ -55,16 +55,21 @@
       font-size: 24px;
       margin-top: 10px;
     }
+    .container-photo {
+      display: flex;
+      justify-content: center;
+      .photo {
+        border-radius: 5px;
+        width: 40%;
+        -webkit-box-shadow: 1px 1px 10px -2px #000000;
+        box-shadow: 1px 1px 10px -2px #000000;
+      }
+    }
+
     .team {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      .photo {
-        width: 60px;
-        height: 60px;
-        border-radius: 50px;
-        background-color: grey;
-      }
     }
   }
 }
