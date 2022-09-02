@@ -192,7 +192,7 @@ const Mission = () => {
   function findname(list) {
     var nom = [];
     features.map((feature) => {
-      feature.features.map((value) => {
+      feature.features.map((value, key) => {
         for (let i in list) {
           if (list[i] === value.id) {
             nom.push({ key: feature.name, value: value.description });
@@ -208,9 +208,10 @@ const Mission = () => {
   }
   return (
     <>
-      <div className="home">
-        <div className="left-home">
-          <h2>Missions du moment</h2>
+      <div className="home-mission">
+        <div className="left-mission">
+          <h1>Missions du moment</h1>
+          <br />
           {mission.count === 0 ? (
             <div>
               <div className="recherche">
@@ -280,43 +281,55 @@ const Mission = () => {
                 </select>
                 <button onClick={handleSubmit}>Rechercher</button>
               </div>
+              <br />
+              <br />
+
               {mission.results ? (
                 <>
                   <h5>
                     Il y a {mission.count} missions correspondants à votre
                     recherche :
                   </h5>
+                  <br />
+                  <br />
                   {mission.results.map((missions, key) => (
-                    <div key={key} className="mission">
-                      <div className="missions">
-                        <p>
-                          <strong>{missions.title}</strong>
-                        </p>
-                        <p>
-                          {" "}
-                          <strong>Société : </strong>
-                          {missions.company}
-                        </p>
-                        <p>
-                          <strong>Date de début : </strong>
-                          {format(missions.start)}
-                        </p>
-                        <p>
-                          <strong>Date de fin : </strong>
-                          {format(missions.end)}
-                        </p>
-                        <p>
-                          <strong>Lieux : </strong>
-                          {missions.zipcode} {missions.city}
-                        </p>
+                    <div className="container-mission">
+                      <div key={key} className="mission">
+                        <div className="missions">
+                          <p>
+                            <strong className="mission-title">
+                              {missions.title}
+                            </strong>
+                          </p>
+                          <p>
+                            {" "}
+                            <strong>Société : </strong>
+                            {missions.company}
+                          </p>
+                          <p>
+                            <strong>Date de début : </strong>
+
+                            {format(missions.start)}
+                          </p>
+                          <p>
+                            <strong>Date de fin : </strong>
+
+                            {format(missions.end)}
+                          </p>
+                          <p>
+                            <strong>Lieux : </strong>
+                            {missions.zipcode} {missions.city}
+                          </p>
+
+                          <button
+                            onClick={() => {
+                              handleShow(missions.id);
+                            }}
+                          >
+                            Détail
+                          </button>
+                        </div>
                       </div>
-                      <button
-                        onClick={() => {
-                          handleShow(missions.id);
-                        }}
-                      >
-                        Détail
-                      </button>
                     </div>
                   ))}
                 </>
@@ -353,7 +366,7 @@ const Mission = () => {
                   </div>
                 )
               ) : mission.next ? (
-                <div className="page">
+                <div className="page-suivant">
                   <button
                     onClick={() => {
                       handleClick(mission.next);

@@ -68,9 +68,12 @@ const HomeLiberal = () => {
               </label>
               <span>
                 Lorsque que vous aurez finalisé votre inscription, nous vous
-                invitons à prendre un rendez-vous en visio sur ce lien avec
-                notre équipe afin d'échanger sur votre lancement en tant que
-                Nomad Socialer
+                invitons à prendre un rendez-vous en visio sur {""}
+                <a href="https://nsschool.notion.site/nsschool/Accueil-NS-School-5960c1c3a5b44b24be1f3e205d1ea149">
+                  ce lien
+                </a>{" "}
+                avec notre équipe afin d'échanger sur votre lancement en tant
+                que Nomad Socialer
               </span>
             </div>
           </div>
@@ -79,19 +82,22 @@ const HomeLiberal = () => {
         <br />
 
         <div className="contact-independant">
-          <div className="contact-home-independant">
-            <a href="https://nsschool.notion.site/Accueil-5960c1c3a5b44b24be1f3e205d1ea149">
-              Rendez vous en FAQ
-            </a>
+          <div>
+            <button>
+              <a href="https://nsschool.notion.site/Accueil-5960c1c3a5b44b24be1f3e205d1ea149">
+                Rendez vous en FAQ
+              </a>
+            </button>
           </div>
 
-          <div className="container-contact-independant">
-            <div className="contact-home-independant">
+          <div className="contact-independant">
+            <button>
               <a>09 77 19 59 49</a>
-            </div>
-            <div className="contact-home-independant">
+            </button>
+
+            <button>
               <a href="mailto:hello@nomad-social.com">hello@nomad-social.com</a>
-            </div>
+            </button>
           </div>
         </div>
       </div>

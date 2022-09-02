@@ -1,135 +1,182 @@
 input:invalid {
-    border: red solid 3px;
+  border: red solid 3px;
+}
+
+.home-mission {
+  display: flex;
+  color: #5b5b5b;
+  font-family: "Alatsi", sans-serif;
+
+  .left-mission {
+    padding: 60px;
+
+    h1 {
+      color: #38b6ff;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
 }
 
 .recherche {
-    display: flex;
-    gap: 1em;
-    align-items: center;
-    margin-block: 10px;
+  border-bottom: #38b6ff solid 3px;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  margin-block: 10px;
+  padding: 10px;
 
-    select {
-        width: 50%;
-        height: 100px;
-        overflow: scroll;
+  select {
+    width: 100%;
+    height: 100px;
+    overflow: scroll;
+    border: 1px solid grey;
 
-        option {
-            font-size: 0.95em;
-        }
+    option {
+      font-size: 0.95em;
+    }
+  }
+
+  button {
+    background-color: #38b6ff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+
+    &:hover {
+      filter: brightness(90%);
+      transition: all 300ms ease;
     }
 
-    button {
-        background-color: #38b6ff;
-        border: none;
-        border-radius: 5px;
-        padding: 5px;
-        color: white;
-
-        &:hover {
-            filter: brightness(90%);
-            transition: all 300ms ease;
-
-        }
-
-        &:active {
-            transform: translateY(15%);
-            transition: transform 300ms ease;
-        }
+    &:active {
+      transform: translateY(15%);
+      transition: transform 300ms ease;
     }
+  }
 
-    .diplome {
-        p {
-            margin: 0;
-        }
+  .diplome {
+    p {
+      margin: 0;
     }
+  }
 
-    p.ps {
-        font-size: 10px;
-
-    }
+  p.ps {
+    font-size: 10px;
+  }
 }
 
-.mission {
+.container-mission {
+  .mission {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1em;
+    width: 50%;
     margin-block-end: 10px;
-
+    background-color: white;
+    border-radius: 10px;
+    -webkit-box-shadow: 1px 1px 10px -2px #000000;
+    box-shadow: 1px 1px 10px -2px #000000;
     .missions {
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        margin-block-end: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      margin-block-end: 10px;
+      padding: 20px;
+      .mission-title {
+        color: #38b6ff;
+      }
     }
 
     button {
-        background-color: #38b6ff;
-        border: none;
-        border-radius: 5px;
-        padding: 5px;
-        color: white;
+      background-color: #38b6ff;
+      border: none;
+      width: 100%;
+      border-radius: 5px;
+      padding: 5px;
+      color: white;
 
-        &:hover {
-            filter: brightness(90%);
-            transition: all 300ms ease;
+      &:hover {
+        filter: brightness(90%);
+        transition: all 300ms ease;
+      }
 
-        }
+      &:active {
+        transform: translateY(15%);
+        transition: transform 300ms ease;
+      }
+    }
+  }
+}
 
-        &:active {
-            transform: translateY(15%);
-            transition: transform 300ms ease;
-        }
+.page-suivant {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1em;
 
+  button {
+    background: #ffde59;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: #5b5b5b;
+
+    &:hover {
+      filter: brightness(90%);
+      transition: all 300ms ease;
     }
 
+    &:active {
+      transform: translateY(15%);
+      transition: transform 300ms ease;
+    }
+  }
 }
 
 .page {
-    display: flex;
-    align-items: center;
-    gap: 1em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
 
+  button {
+    background: #ffde59;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: #5b5b5b;
 
-
-    button {
-        background: #ffde59;
-        border: none;
-        border-radius: 5px;
-        padding: 5px;
-
-        &:hover {
-            filter: brightness(90%);
-            transition: all 300ms ease;
-
-        }
-
-        &:active {
-            transform: translateY(15%);
-            transition: transform 300ms ease;
-        }
-
+    &:hover {
+      filter: brightness(90%);
+      transition: all 300ms ease;
     }
+
+    &:active {
+      transform: translateY(15%);
+      transition: transform 300ms ease;
+    }
+  }
 }
 
 .footermodal {
-    button {
-        background: var(--bs-danger);
-        border: none;
-        border-radius: 5px;
-        padding: 5px;
-        color: white;
+  button {
+    background: var(--bs-danger);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
 
-
-        &:hover {
-            filter: brightness(90%);
-            transition: all 200ms ease;
-
-        }
-
-        &:active {
-            transform: translateY(15%);
-            transition: transform 300ms ease;
-        }
-
+    &:hover {
+      filter: brightness(90%);
+      transition: all 200ms ease;
     }
+
+    &:active {
+      transform: translateY(15%);
+      transition: transform 300ms ease;
+    }
+  }
 }

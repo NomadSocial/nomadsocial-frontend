@@ -10,8 +10,8 @@ const Team = () => {
         <div className="top-team">
           <h1>Qu'est ce que Nomad Social ?</h1>
           <p>
-            Nomad Social, c'est une plateforme de mise en relation, dont
-            l'objectif est de redynamiser le secteur du Social
+            Nomad Social, c'est une plateforme d'accompagnement et de mise en
+            relation, dont l'objectif est de redynamiser le secteur du Social
           </p>
           <div className="list-top-team">
             <div>

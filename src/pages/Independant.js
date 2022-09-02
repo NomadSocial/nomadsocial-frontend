@@ -171,6 +171,7 @@ const Independant = () => {
           </div>
         </div>
       </div>
+      <br />
       <Footer />
     </>
   );

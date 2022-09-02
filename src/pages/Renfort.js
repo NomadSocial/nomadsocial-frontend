@@ -63,8 +63,11 @@ const Renfort = () => {
           </p>
           <p>Un pilotage de votre équipe 0 stress, 0 sacrifice !</p>
           <div className="button-renfort">
-            {" "}
-            <button>Je poste un SOS Renfort</button>
+            <button>
+              <a href="mailto:hello@nomad-social.com">
+                Je poste un SOS Renfort
+              </a>
+            </button>
           </div>
 
           <p className="italic">

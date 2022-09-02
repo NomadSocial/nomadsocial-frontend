@@ -45,6 +45,9 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+      a {
+        color: #38b6ff;
+      }
       span {
         padding: 10px;
       }
@@ -58,25 +61,16 @@
   .contact-independant {
     display: flex;
     justify-content: space-around;
-    .container-contact-independant {
-      display: flex;
-      justify-content: space-between;
-      width: 50%;
-    }
-    a {
-      outline: none;
-      color: #5b5b5b;
-    }
-    .contact-home-independant {
+    button {
       width: 200px;
-      height: 50px;
+      height: 60px;
       border-radius: 10px;
+      border: none;
       background-color: #ffde59;
-      outline: none;
-      text-align: center;
-      padding: 10px;
+      color: #5b5b5b;
+      margin-right: 10px;
     }
-    a:hover {
+    button:hover {
       color: #38b6ff;
     }
   }
