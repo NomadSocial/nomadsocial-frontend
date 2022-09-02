@@ -13,7 +13,7 @@ const Mission = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/features/all", {
+      .get(`${api_url}/features/all`, {
         params: {
           context: "mission",
         },
@@ -29,7 +29,7 @@ const Mission = () => {
         console.log(error);
       });
     axios
-      .get("http://localhost:8000/api/missions/", {
+      .get(`${api_url}/missions/`, {
         params: {
           page_size: 5,
         },
@@ -49,7 +49,7 @@ const Mission = () => {
   const handleClose = () => setShow(false);
   const handleShow = (id) => {
     axios
-      .get("http://localhost:8000/api/missions/" + id + "/", {
+      .get(`${api_url}/missions/` + id + "/", {
         params: {
           page_size: 5,
         },
@@ -92,7 +92,7 @@ const Mission = () => {
     if (event.key === "Enter") {
       axios
         .get(
-          "http://localhost:8000/api/missions/",
+          `${api_url}/missions/missions/`,
 
           {
             params: {
@@ -122,7 +122,7 @@ const Mission = () => {
       if (choix["Diplômes"] === undefined || choix["Diplômes"].length === 0) {
         axios
           .get(
-            "http://localhost:8000/api/missions/",
+            `${api_url}/missions/`,
 
             {
               params: {
@@ -147,7 +147,7 @@ const Mission = () => {
         axios
 
           .get(
-            "http://localhost:8000/api/missions/",
+            `${api_url}/missions/`,
 
             {
               params: {

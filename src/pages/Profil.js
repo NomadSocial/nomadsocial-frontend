@@ -26,7 +26,7 @@ const Profil = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/me/", {
+      .get(`${api_url}/me/`, {
         auth: {
           username: localStorage.getItem("email"),
           password: localStorage.getItem("password"),
@@ -45,7 +45,7 @@ const Profil = () => {
         console.log(error);
       });
     axios
-      .get("http://localhost:8000/api/features/all", {
+      .get(`${api_url}/features/all`, {
         auth: {
           username: localStorage.getItem("email"),
           password: localStorage.getItem("password"),
@@ -75,7 +75,7 @@ const Profil = () => {
       });
 
     axios
-      .get("http://localhost:8000/api/me/features/", {
+      .get(`${api_url}/me/features/`, {
         auth: {
           username: localStorage.getItem("email"),
           password: localStorage.getItem("password"),
@@ -94,7 +94,7 @@ const Profil = () => {
       });
 
     axios
-      .get("http://localhost:8000/api/me/worklocations/", {
+      .get(`${api_url}/me/worklocations/`, {
         auth: {
           username: localStorage.getItem("email"),
           password: localStorage.getItem("password"),
@@ -108,7 +108,7 @@ const Profil = () => {
         console.log(error);
       });
     axios
-      .get("http://localhost:8000/api/me/availabilities/", {
+      .get(`${api_url}/me/availabilities/`, {
         auth: {
           username: localStorage.getItem("email"),
           password: localStorage.getItem("password"),
@@ -166,7 +166,7 @@ const Profil = () => {
     event.preventDefault();
     axios
       .patch(
-        "http://localhost:8000/api/me/",
+        `${api_url}/me/`,
 
         {
           email: email,
@@ -235,7 +235,7 @@ const Profil = () => {
     }
     axios
       .post(
-        "http://localhost:8000/api/me/features/",
+        `${api_url}/me/features/`,
 
         {
           features: R,
@@ -266,7 +266,7 @@ const Profil = () => {
       event.preventDefault();
       axios
         .post(
-          "http://localhost:8000/api/me/worklocations/",
+          `${api_url}/me/worklocations/`,
           {
             zipcode: parseInt(zipcode),
           },
@@ -296,7 +296,7 @@ const Profil = () => {
     event.preventDefault();
     axios
       .post(
-        "http://localhost:8000/api/me/availabilities/",
+        `${api_url}/me/availabilities/`,
         {
           start: startDate,
           end: endDate,
@@ -328,7 +328,7 @@ const Profil = () => {
 
   const handleClickZip = (id) => {
     axios
-      .delete("http://localhost:8000/api/me/worklocations/" + id + "/", {
+      .delete(`${api_url}/me/worklocations/` + id + "/", {
         auth: {
           username: localStorage.getItem("email"),
           password: localStorage.getItem("password"),
@@ -336,7 +336,7 @@ const Profil = () => {
       })
       .then(() => {
         axios
-          .get("http://localhost:8000/api/me/worklocations/", {
+          .get(`${api_url}/me/worklocations/`, {
             auth: {
               username: localStorage.getItem("email"),
               password: localStorage.getItem("password"),
@@ -358,7 +358,7 @@ const Profil = () => {
   const handleClickZipMod = (id) => {
     axios
       .patch(
-        "http://localhost:8000/api/me/worklocations/" + id + "/",
+        `${api_url}/me/worklocations/` + id + "/",
         {
           zipcode: 75001,
         },
@@ -371,7 +371,7 @@ const Profil = () => {
       )
       .then(() => {
         axios
-          .get("http://localhost:8000/api/me/worklocations/", {
+          .get(`${api_url}/me/worklocations/`, {
             auth: {
               username: localStorage.getItem("email"),
               password: localStorage.getItem("password"),
@@ -392,7 +392,7 @@ const Profil = () => {
 
   const handleClickAvailabilities = (id) => {
     axios
-      .delete("http://localhost:8000/api/me/availabilities/" + id + "/", {
+      .delete(`${api_url}/me/availabilities/` + id + "/", {
         auth: {
           username: localStorage.getItem("email"),
           password: localStorage.getItem("password"),
@@ -400,7 +400,7 @@ const Profil = () => {
       })
       .then(() => {
         axios
-          .get("http://localhost:8000/api/me/availabilities/", {
+          .get(`${api_url}/me/availabilities/`, {
             auth: {
               username: localStorage.getItem("email"),
               password: localStorage.getItem("password"),
@@ -422,7 +422,7 @@ const Profil = () => {
   const handleClickAvailabilitiesMod = (id) => {
     axios
       .patch(
-        "http://localhost:8000/api/me/availabilities/" + id + "/",
+        `${api_url}/me/availabilities/` + id + "/",
         {
           start: new Date(),
           end: new Date(),
@@ -436,7 +436,7 @@ const Profil = () => {
       )
       .then(() => {
         axios
-          .get("http://localhost:8000/api/me/availabilities/", {
+          .get(`${api_url}/me/availabilities/`, {
             auth: {
               username: localStorage.getItem("email"),
               password: localStorage.getItem("password"),

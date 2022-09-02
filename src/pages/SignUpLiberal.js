@@ -47,7 +47,7 @@ const SignUpLiberal = () => {
     event.preventDefault();
 
     if (password === confirmPassword) {
-      const url_server = "http://localhost:8000/api/entrepreneurs/register/";
+      const url_server = `${api_url}/entrepreneurs/register/`;
       axios
         .post(url_server, {
           email: email,

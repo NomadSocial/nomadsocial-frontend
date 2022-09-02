@@ -23,7 +23,7 @@ const LogInLiberal = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     axios
-      .get("http://localhost:8000/api/me/", {
+      .get(`${api_url}/me/`, {
         auth: {
           username: email,
           password: password,
