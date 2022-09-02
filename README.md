@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <br/>
 <div align="center">
-    <img src="https://res.cloudinary.com/db12jfw2s/image/upload/v1662113492/Nomad%20Social/Logo_vjjgzv.png" width="956">
+    <img src="https://res.cloudinary.com/db12jfw2s/image/upload/v1662113492/Nomad%20Social/Logo_vjjgzv.png" width="500">
 </div>
 <br/>
 
