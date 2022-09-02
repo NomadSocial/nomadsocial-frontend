@@ -1,4 +1,5 @@
 import "./Renfort.scss";
+import Footer from "../components/Footer";
 
 //Images
 import enregistrement from "../assets/img/enregistrement.png";
@@ -75,6 +76,8 @@ const Renfort = () => {
           </p>
         </div>
       </div>
+      <br />
+      <Footer />
     </>
   );
 };

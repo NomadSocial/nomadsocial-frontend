@@ -16,6 +16,7 @@ import HomeLiberal from "./pages/HomeLiberal";
 import Mission from "./pages/Mission";
 import Team from "./pages/Team";
 import Renfort from "./pages/Renfort";
+import NsSchool from "./pages/NsSchool";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/renfort" element={<Renfort />} />
         <Route path="/signupliberal" element={<SignUpLiberal />} />
         <Route path="/loginliberal" element={<LogInLiberal />} />
+        <Route path="/nsschool" element={<NsSchool />} />
       </Routes>
     </Router>
   );

@@ -31,13 +31,7 @@ const Footer = () => {
         <div className="discover">
           <h3>Découvrir</h3>
           <span>Le concept</span>
-          <a
-            href="https://nsschool.notion.site/Accueil-5960c1c3a5b44b24be1f3e205d1ea149"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            NS School
-          </a>
+          <span onClick={() => navigate("/nsschool")}>NS School</span>
           <span>Contact</span>
         </div>
         <div className="ressource">

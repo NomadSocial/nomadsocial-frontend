@@ -139,6 +139,14 @@ const Header = () => {
                       <Dropdown.Item value="mission" href="/mission">
                         Missions du moment
                       </Dropdown.Item>
+                      <Dropdown.Item
+                        value="mission"
+                        href="https://nsschool.notion.site/Accueil-NS-School-5960c1c3a5b44b24be1f3e205d1ea149"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        NS School
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                   <Dropdown></Dropdown>
