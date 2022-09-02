@@ -2,7 +2,50 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<br/>
+
+# About Nomad Social
+
+<br/>
+<div align="center">
+    <img src="https://res.cloudinary.com/db12jfw2s/image/upload/v1662113492/Nomad%20Social/Logo_vjjgzv.png" width="956">
+</div>
+<br/>
+
+## Welcome to Nomad Social!
+
+Nomad Social est la 1ère plateforme qui rassemble les travailleurs
+sociaux et les entreprises publiques et privées.
+
+## Built with :
+
+To create Nomad Social, i use :
+
+- [React.js](https://reactjs.org/)
+- [Create Reat App](https://create-react-app.dev/)
+- [axios](https://github.com/axios/axios)
+- [sweetalert2](https://github.com/sweetalert2/sweetalert2)
+- [react-bootstrap](https://react-bootstrap.github.io/)
+- [SASS](https://sass-lang.com/)
+- [react-datepicker](https://www.npmjs.com/package/react-datepicker)
+
+<br/>
+
+## Getting Started
+
+### Prerequisites
+
+- Clone this repository :
+
+  ```sh
+  git clone https://github.com/NomadSocial/nomadsocial-frontend
+  ```
+
+- Install dependencies with yarn :
+
+  ```sh
+  yarn install
+  ```
 
 In the project directory, you can run:
 
@@ -39,32 +82,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Contact
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Maurine Corniilon - maurinecornillon@gmail.com
